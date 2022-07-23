@@ -1,0 +1,94 @@
+html{
+	scroll-behavior: smooth;
+	::-webkit-scrollbar{
+		display: none;
+	}
+}
+body{
+	background-color: #181818;
+	color: #fff;
+	font-size: 17px;
+	padding: 50px 20px 0;
+}
+h3{
+	font-size: 22px;
+}
+.title{
+	text-align: center;
+	margin-bottom: 80px;
+	font-size: 24px;
+}
+.task {
+	margin-bottom: 70px;
+
+	&__inner {
+		margin-bottom: 20px;
+	}
+	&__title-descr{
+		font-size: 18px;
+		font-weight: 400;
+		margin-bottom: 40px;
+	}
+
+}
+.task__btn{
+	color: #fff;
+}
+
+.second-task{
+	&__input-text{
+		color: #fff;
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 2px;
+		padding: 30px 20px 20px 20px;
+		width: 100%;
+		max-width: 400px;
+		height: 400px;
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		max-width: 400px;
+		margin-bottom: 30px;
+	}
+	&__input-num{
+		background-color: rgba(255, 255, 255, 0.1);
+		width: 45px;
+		border-radius: 4px;
+		padding-left: 5px;
+		
+	}
+	&__apply{
+		border-radius: 4px;
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 10px 20px;
+	}
+	&__output{
+		color: #fff;
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 2px;
+		padding: 30px 20px 20px 20px;
+		width: 100%;
+		max-width: 400px;
+		font-size: 16px;
+		margin-bottom: 20px;
+		font-size: 16px;
+	}
+}
+.third-task {
+	&__example,
+	&__output,
+	&__refresh {
+		background-color: rgba(255, 255, 255, 0.1);
+		border-radius: 2px;
+		width: 190px;
+		height: 42px;
+		padding: 10px;
+	}
+	&__refresh{
+		width: 80px;
+		color: #fff;
+	}
+}
