@@ -189,12 +189,15 @@ function matches(){
 let eighthData = document.querySelector(".eight-task__input");
 let vowelsOutput = document.querySelector(".eight-task__vowels");
 let consonantsOutput = document.querySelector(".eight-task__consonants");
-document.querySelector(".eight-task__input").addEventListener("input", countLeters);
-
+document.querySelector(".eight-task__input").addEventListener("change", countLeters);
+let vowels = "0";
+let consonants = "0";
 function countLeters(){
 	let eighthString = eighthData.value;
-	let vowels = eighthString.match(/[aeiou]/gi).length;
-	let consonants = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi).length;
+	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length
+	let vowels = vowelsLenght ? vowelsLenght : 0;
+	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length
+	let consonants = consonantsLenght ? consonantsLenght : 0
 	vowelsOutput.innerHTML = vowels;
 	consonantsOutput.innerHTML = consonants;
 }
