@@ -143,3 +143,34 @@ h3{
 		font-size: 14px;
 	}
 }
+.six-task{
+	&__output{
+		min-height: 45px;
+		height: auto;
+	}
+}
+
+.eight-task{
+	&__vowels{
+		position: relative;
+		width: 50px;
+		&::after{
+			content: "— Vowels";
+			position: absolute;
+			top: 50%;
+			right: -80px;
+			transform: translate(0%, -50%);
+		}
+	}
+	&__consonants{
+		position: relative;
+		width: 50px;
+		&::after{
+			content: "— Consonants";
+			position: absolute;
+			top: 50%;
+			right: -110px;
+			transform: translate(0%, -50%);
+		}
+	}
+}

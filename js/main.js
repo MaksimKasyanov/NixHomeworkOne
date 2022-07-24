@@ -151,10 +151,51 @@ function sortToMax(){
 	sixthData.value = sixthData.value.replace(/[^0-9]/g, '')
 	sixthArr = [];
 	let string = this.value;
-	sixthArr = string.split("")
+	sixthArr = string.split("");
 	sixthArr.sort((a, b) => b - a);
 	sixthOutput.innerHTML = sixthArr.join(', ')
 }
 // ! Task 7
-const scores = {"A": 100, "B": 14, "C": 9, "D": 28, "E": 145, "F": 12, "G": 3,"H": 10, "I": 200, "J": 100, "K": 114, "L": 100, "M": 25,"N": 450, "O": 80, "P": 2, "Q": 12, "R": 400, "S": 113,"T": 405, "U": 11, "V": 10, "W": 10, "X": 3, "Y": 210, "Z": 23}
+
+const scores = { "A": 100, "B": 14, "C": 9, "D": 28, "E": 145, "F": 12, "G": 3, "H": 10, "I": 200, "J": 100, "K": 114, "L": 100, "M": 25, "N": 450, "O": 80, "P": 2, "Q": 12, "R": 400, "S": 113, "T": 405, "U": 11, "V": 10, "W": 10, "X": 3, "Y": 210, "Z": 23 }
+let seventhData = document.querySelector(".seventh-task__input");
+document.querySelector(".seventh-task__input").addEventListener("input", matches);
+let seventhOutput = document.querySelector(".seventh-task__output");
+
+
+
+function matches(){
+	let seventhTaskName = seventhData.value.toUpperCase();
+	seventhTaskName.replace(/[^A-Z]/g);
+	let splitName = seventhTaskName.split('');
+	let scoreName = 0;
+	splitName.forEach(letter => {
+		scoreName += scores[letter];
+	});
+	if(scoreName <= 60){
+		seventhOutput.innerHTML = "NOT TOO GOOD";
+	}else if(scoreName <= 300){
+		seventhOutput.innerHTML = "PRETTY GOOD";
+	}else if(scoreName < 600){
+		seventhOutput.innerHTML = "VERY GOOD";
+	}else{
+		seventhOutput.innerHTML = "THE BEST";
+	}
+
+	console.log(scoreName);
+}
+
+// ! Task 8
+let eighthData = document.querySelector(".eight-task__input");
+let vowelsOutput = document.querySelector(".eight-task__vowels");
+let consonantsOutput = document.querySelector(".eight-task__consonants");
+document.querySelector(".eight-task__input").addEventListener("input", countLeters);
+
+function countLeters(){
+	let eighthString = eighthData.value;
+	let vowels = eighthString.match(/[aeiou]/gi).length;
+	let consonants = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi).length;
+	vowelsOutput.innerHTML = vowels;
+	consonantsOutput.innerHTML = consonants;
+}
 
