@@ -1,20 +1,19 @@
 'use strict'
 // ! Task 1
-let randomInt;
-let randomLength;
+
 let randomArray = [];
 const differenceInput = document.querySelector(".task__inpput");
 const differenceOutput = document.querySelector(".task__output");
-function getRndInt() {
+
+function randomArr(){
+	let randomInt;
+	let randomLength;
+	const maxRandomLength = 9;
 	const minRandomInt = -100;
 	const maxRandomInt = 100;
-	randomInt = parseInt(minRandomInt - 0.5 + Math.random() * (maxRandomInt - minRandomInt + 1));
-}
-function randomArr(){
-	const maxRandomLength = 9;
 	randomLength = Math.floor(Math.random() * maxRandomLength);
 	for(let i = 0; i < randomLength; i++){
-		getRndInt();
+		randomInt = parseInt(minRandomInt - 0.5 + Math.random() * (maxRandomInt - minRandomInt + 1));
 		randomArray.push(randomInt);
 	}
 }
@@ -35,8 +34,6 @@ diffBtwnNums();
 
 document.querySelector(".task__btn-1").addEventListener("click", taskOneReset);
 function taskOneReset(){
-	randomInt;
-	randomLength;
 	randomArray = [];
 	randomArr();
 	diffBtwnNums();
@@ -75,34 +72,89 @@ function cleaningStr(){
 	wordsLength = Number(arrOfSortedWords.length);
 	console.log(arrOfSortedWords);
 	console.log(wordsLength);
-	secondTaskOutput.innerHTML = 'Found ' + wordsLength + ' \u2013 ' + arrOfSortedWords.join(", ");
+	secondTaskOutput.innerHTML = 'Found ' + wordsLength + ' words ' + ' \u2013 ' + arrOfSortedWords.join(", ");
 }
 
 // ! Task 3
-let thirdExample = document.querySelector(".third-task__example");
-let thirdOutput = document.querySelector(".third-task__output");
-let thirdButton = document.querySelector(".third-task__refresh").addEventListener("click", findingMissingDigit);
+const thirdExample = document.querySelector(".third-task__example");
+const thirdOutput = document.querySelector(".third-task__output");
+const thirdButton = document.querySelector(".third-task__refresh").addEventListener("click", findingMissingDigit);
 let thirdTaskRandomArr = [];
-// const comparingArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 function findingMissingDigit(){
 	const taskArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 	let randomInt = Math.floor(Math.random() * 10);
 	taskArr.splice(randomInt, 1);
 	thirdTaskRandomArr = taskArr.sort(() => Math.random() - 0.5);
-	
 	let thirdTaskExample = '[' + thirdTaskRandomArr.join(", ") + ']';
 	thirdExample.innerHTML = thirdTaskExample;
 	thirdTaskRandomArr.sort();
 	for(let i = 0; i < 10; i++){
-		// console.log(typeof thirdTaskRandomArr[0])
 		if(i == thirdTaskRandomArr[0]){
-			console.log(thirdTaskRandomArr[0])
 			thirdTaskRandomArr.shift()
 		}else{
 			thirdOutput.innerHTML = i
 		}
 	}
-
-	console.log(thirdTaskRandomArr);
 }
 findingMissingDigit();
+
+// ! Task 4
+let fourthFirstInput;
+let fourthSecondInput;
+document.querySelector(".fourth-task__first-input").addEventListener("change", fourthInputOne);
+function fourthInputOne(){
+	fourthFirstInput = document.querySelector(".fourth-task__first-input").value;
+}
+
+document.querySelector(".fourth-task__second-input").addEventListener("change", fourthInputTwo);
+function fourthInputTwo(){
+	fourthSecondInput = document.querySelector(".fourth-task__second-input").value;
+}
+
+let fourthOutput = document.querySelector(".fourth-task__output");
+document.querySelector(".fourth-task__check").addEventListener("click", compareString);
+function compareString() {
+	let result =  fourthFirstInput.endsWith(fourthSecondInput);
+	if(result){
+		fourthOutput.innerHTML = 'true'
+	}else{
+		fourthOutput.innerHTML = 'false'
+		
+	}
+
+}
+
+
+// ! Task 5
+const fifthExample = document.querySelector(".fifth-task__example");
+const fifthSolution = document.querySelector(".fifth-task__solution");
+document.querySelector(".fifth-task__refresh").addEventListener("click", averageBtwnClosest)
+function averageBtwnClosest(){
+	const fifthTaskArr = [];
+	randomArr();
+	let n = randomArray.length - 1;
+	fifthExample.innerHTML = '[' + randomArray + ']';
+	for(let i = 0; i < n; i++){
+		fifthTaskArr.push((randomArray[0] + randomArray[1]) / 2)
+		randomArray.shift();
+	}
+	fifthSolution.innerHTML = '[' + fifthTaskArr + ']';
+}
+averageBtwnClosest();
+
+// ! Task 6
+let sixthArr = [];
+let sixthData = document.querySelector(".six-task__input");
+let sixthStr = document.querySelector(".six-task__input").addEventListener("input", sortToMax);
+let sixthOutput = document.querySelector(".six-task__output");
+function sortToMax(){
+	sixthData.value = sixthData.value.replace(/[^0-9]/g, '')
+	sixthArr = [];
+	let string = this.value;
+	sixthArr = string.split("")
+	sixthArr.sort((a, b) => b - a);
+	sixthOutput.innerHTML = sixthArr.join(', ')
+}
+// ! Task 7
+const scores = {"A": 100, "B": 14, "C": 9, "D": 28, "E": 145, "F": 12, "G": 3,"H": 10, "I": 200, "J": 100, "K": 114, "L": 100, "M": 25,"N": 450, "O": 80, "P": 2, "Q": 12, "R": 400, "S": 113,"T": 405, "U": 11, "V": 10, "W": 10, "X": 3, "Y": 210, "Z": 23}
+

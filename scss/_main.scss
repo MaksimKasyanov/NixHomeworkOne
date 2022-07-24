@@ -18,12 +18,27 @@ h3{
 	margin-bottom: 80px;
 	font-size: 24px;
 }
-.button{
+.button,
+.arrow{
 	color: #fff;
 	width: 80px;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 10px;
 	border-radius: 4px;
+}
+.arrow{
+	display: inline-block;
+	width: 45px;
+	margin-bottom: 20px;
+}
+.field{
+	color: #fff;
+	background-color: rgba(255, 255, 255, 0.1);
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 20px;
+	width: 100%;
+	height: 45px;
 }
 .task {
 	margin-bottom: 70px;
@@ -85,5 +100,46 @@ h3{
 		width: 190px;
 		height: 42px;
 		padding: 10px;
+	}
+}
+
+.fourth-task {
+	&__output,
+	&__first-input,
+	&__second-input {
+		color: #fff;
+		width: 320px;
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 10px;
+		border-radius: 4px;
+		display: block;
+		margin-bottom: 20px;
+	}
+	&__inner{
+		max-width: 320px;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__output{
+		width: 220px;
+		height: 45px;
+		display: block;
+		cursor: default;
+	}
+	&__check{
+		height: 45px;
+	}
+}
+.fifth-task {
+
+	&__example {
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+
+
+	&__solution {
+		margin-bottom: 20px;
+		font-size: 14px;
 	}
 }
