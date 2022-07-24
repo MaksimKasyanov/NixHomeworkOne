@@ -189,7 +189,7 @@ function matches(){
 let eighthData = document.querySelector(".eight-task__input");
 let vowelsOutput = document.querySelector(".eight-task__vowels");
 let consonantsOutput = document.querySelector(".eight-task__consonants");
-document.querySelector(".eight-task__input").addEventListener("change", countLeters);
+document.querySelector(".eight-task__input").addEventListener("input", countLeters);
 let vowels = "0";
 let consonants = "0";
 function countLeters(){

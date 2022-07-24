@@ -155,10 +155,10 @@ h3{
 		position: relative;
 		width: 50px;
 		&::after{
-			content: "— Vowels";
+			content: "Vowels";
 			position: absolute;
 			top: 50%;
-			right: -80px;
+			right: -60px;
 			transform: translate(0%, -50%);
 		}
 	}
@@ -166,10 +166,10 @@ h3{
 		position: relative;
 		width: 50px;
 		&::after{
-			content: "— Consonants";
+			content: "Consonants";
 			position: absolute;
 			top: 50%;
-			right: -110px;
+			right: -90px;
 			transform: translate(0%, -50%);
 		}
 	}
