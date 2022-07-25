@@ -32,7 +32,7 @@ function diffBtwnNums(){
 }
 diffBtwnNums();
 
-document.querySelector(".task__btn-1").addEventListener("click", taskOneReset);
+document.querySelector(".first-task__btn").addEventListener("click", taskOneReset);
 function taskOneReset(){
 	randomArray = [];
 	randomArr();
@@ -105,12 +105,10 @@ document.querySelector(".fourth-task__first-input").addEventListener("change", f
 function fourthInputOne(){
 	fourthFirstInput = document.querySelector(".fourth-task__first-input").value;
 }
-
 document.querySelector(".fourth-task__second-input").addEventListener("change", fourthInputTwo);
 function fourthInputTwo(){
 	fourthSecondInput = document.querySelector(".fourth-task__second-input").value;
 }
-
 let fourthOutput = document.querySelector(".fourth-task__output");
 document.querySelector(".fourth-task__check").addEventListener("click", compareString);
 function compareString() {
@@ -156,14 +154,10 @@ function sortToMax(){
 	sixthOutput.innerHTML = sixthArr.join(', ')
 }
 // ! Task 7
-
 const scores = { "A": 100, "B": 14, "C": 9, "D": 28, "E": 145, "F": 12, "G": 3, "H": 10, "I": 200, "J": 100, "K": 114, "L": 100, "M": 25, "N": 450, "O": 80, "P": 2, "Q": 12, "R": 400, "S": 113, "T": 405, "U": 11, "V": 10, "W": 10, "X": 3, "Y": 210, "Z": 23 }
 let seventhData = document.querySelector(".seventh-task__input");
 document.querySelector(".seventh-task__input").addEventListener("input", matches);
 let seventhOutput = document.querySelector(".seventh-task__output");
-
-
-
 function matches(){
 	let seventhTaskName = seventhData.value.toUpperCase();
 	seventhTaskName.replace(/[^A-Z]/g);
@@ -173,13 +167,13 @@ function matches(){
 		scoreName += scores[letter];
 	});
 	if(scoreName <= 60){
-		seventhOutput.innerHTML = "NOT TOO GOOD";
+		seventhOutput.innerHTML = `NOT TOO GOOD (${scoreName})`;
 	}else if(scoreName <= 300){
-		seventhOutput.innerHTML = "PRETTY GOOD";
+		seventhOutput.innerHTML = `PRETTY GOOD (${scoreName})`;
 	}else if(scoreName < 600){
-		seventhOutput.innerHTML = "VERY GOOD";
+		seventhOutput.innerHTML = `VERY GOOD (${scoreName})`;
 	}else{
-		seventhOutput.innerHTML = "THE BEST";
+		seventhOutput.innerHTML = `THE BEST (${scoreName})`;
 	}
 
 	console.log(scoreName);
@@ -194,11 +188,33 @@ let vowels = "0";
 let consonants = "0";
 function countLeters(){
 	let eighthString = eighthData.value;
-	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length
+	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
 	let vowels = vowelsLenght ? vowelsLenght : 0;
-	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length
+	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
 	let consonants = consonantsLenght ? consonantsLenght : 0
 	vowelsOutput.innerHTML = vowels;
 	consonantsOutput.innerHTML = consonants;
+}
+
+// ! Task 9
+let ninethText = document.querySelector(".nineth-task__input-text");
+let ninethLetters = document.querySelector(".nineth-task__input-letters");
+let ninethButton = document.querySelector(".nineth-task__apply").addEventListener("click", removeLetters);
+
+let ninethOutput = document.querySelector(".nineth-task__output")
+function removeLetters(){
+	let text = ninethText.value;
+	let letters = ninethLetters.value;
+	let arr = letters.split('')
+	let createRegex = new RegExp(letters, "gi");
+	// let matching = text.match(createRegex);
+	for(let i = 0; i < letters.length; i++){
+		createRegex = new RegExp(arr[0], "gi");
+		text = text.replace(createRegex, "");
+		arr.shift();
+	}
+	ninethOutput.innerHTML = text;
+	console.log(createRegex);
+	console.log(matching);
 }
 
