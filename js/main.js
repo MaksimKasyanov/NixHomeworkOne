@@ -1,9 +1,11 @@
 'use strict'
-// ! Task 1
 
 let randomArray = [];
 const differenceInput = document.querySelector(".task__inpput");
 const differenceOutput = document.querySelector(".task__output");
+
+
+
 
 function randomArr(){
 	let randomInt;
@@ -17,7 +19,7 @@ function randomArr(){
 		randomArray.push(randomInt);
 	}
 }
-randomArr();
+// ! Task 1
 function diffBtwnNums(){
 	if(randomArray.length <= 1){
 		const outputStr = randomArray.join(", ");
@@ -27,11 +29,10 @@ function diffBtwnNums(){
 		const outputStr = randomArray.join(", ");
 		differenceInput.innerHTML = '[' + outputStr + ']';
 		differenceOutput.innerHTML = Math.max(...randomArray) - Math.min(...randomArray); 
-
 	}
 }
+randomArr();
 diffBtwnNums();
-
 document.querySelector(".first-task__btn").addEventListener("click", taskOneReset);
 function taskOneReset(){
 	randomArray = [];
@@ -213,8 +214,161 @@ function removeLetters(){
 		text = text.replace(createRegex, "");
 		arr.shift();
 	}
-	ninethOutput.innerHTML = text;
+	if(text == ninethText.value){
+		ninethOutput.innerHTML = 'The string doesn\'t contain your value'
+	}else{
+		ninethOutput.innerHTML = text;
+	}
+	
 	console.log(createRegex);
 	console.log(matching);
 }
 
+
+
+
+//  ! Task 10
+let tenthFirstArr = document.querySelector(".tenth-task__input-one");
+let tenthSecondArr = document.querySelector(".tenth-task__input-two");
+let tenthOutput = document.querySelector(".tenth-task__output");
+document.querySelector(".tenth-task__reset").addEventListener("click", unique)
+function randomSmallArr(){
+	let randomInt;
+	let randomLength;
+	const maxRandomLength = 6;
+	const minRandomInt = 1;
+	const maxRandomInt = 10;
+	randomLength = Math.floor(4 + Math.random() * maxRandomLength);
+	for(let i = 0; i < randomLength; i++){
+		randomInt = parseInt(minRandomInt - 0.5 + Math.random() * (maxRandomInt - minRandomInt + 1));
+		randomArray.push(randomInt);
+	}
+}
+let firstArr;
+let secondArr;
+let output;
+function tenthArrays(){
+	randomSmallArr();
+	firstArr = randomArray;
+	tenthFirstArr.innerHTML = firstArr;
+	randomArray = [];
+	randomSmallArr();
+	secondArr = randomArray;
+	tenthSecondArr.innerHTML = secondArr;
+	output = firstArr.concat(secondArr);
+	output.sort(function(a, b) {
+		return a - b;
+	});
+	
+}
+tenthArrays();
+function unique() {
+	tenthArrays();
+	let result = [];
+	for (let str of output) {
+	if (!result.includes(str)) {
+		result.push(str);
+		}
+	}
+	tenthOutput.innerHTML = result;
+}
+unique();
+
+
+// ! Task 11
+function invert_key_value(obj) {
+	let result = {};
+	let keys = _keys(obj);
+	for (let i = 0, length = keys.length; i < length; i++) {
+		result[obj[keys[i]]] = keys[i];
+	}
+	return result;
+}
+function _keys(obj){
+	if (!isObject(obj)) return [];
+	if (Object.keys) return Object.keys(obj);
+	let keys = [];
+	for (let key in obj) if (_.has(obj, key)) keys.push(key);
+	return keys;
+}
+function isObject(obj) 
+{
+	let type = typeof obj;
+	return type ==='function' || type ==='object' && !!obj;
+}
+const eleventhInput = document.querySelector(".eleventh-task__input-text");
+const eleventhInverting = document.querySelector(".eleventh-task__input-text").addEventListener("input", objectInverting)
+const eleventhOutput = document.querySelector(".eleventh-task__output");
+
+let testObj = {"red": "#FF0000", "green": "#00FF00", "white": "#FFFFFF"};
+
+
+console.log(testObj);
+
+function objectInverting(){
+	let inverted = invert_key_value(testObj);
+	console.log(inverted);
+	let stringifyed = JSON.stringify(inverted);
+	console.log(stringifyed);
+	let split = stringifyed.split(",");
+	let join = split.join(", \n");
+	eleventhOutput.innerHTML = join;
+}
+objectInverting();
+
+
+let inputX = document.querySelector(".fourteenth-task__x");
+let inputY = document.querySelector(".fourteenth-task__y");
+let inputZ = document.querySelector(".fourteenth-task__z");
+let inputW = document.querySelector(".fourteenth-task__w");
+let inputH = document.querySelector(".fourteenth-task__h");
+
+const fourteenthApply = document.querySelector(".fourteenth-task__apply").addEventListener("click", brickFit);
+const fourteenthOutput = document.querySelector(".fourteenth-task__output");
+fourteenthOutput.innerHTML = 'Fill all parameters'
+function brickFit(){
+	let x = inputX.value;
+	let y = inputY.value;
+	let z = inputZ.value;
+	let w = inputW.value;
+	let h = inputH.value;
+	let brick = [x, y, z];
+	let hole = [w, h];
+	brick.sort();
+	brick.pop();
+	if(brick[0] <= hole[0] && brick[1] <= hole[1]){
+		fourteenthOutput.innerHTML = 'True'
+	}else{
+		fourteenthOutput.innerHTML = 'False'
+	}
+}
+
+
+let thirteenthInput = document.querySelector(".thirteenth-task__input");
+let thirteenthOutput = document.querySelector(".thirteenth-task__output");
+document.querySelector(".thirteenth-task__left").addEventListener("click", leftRotation);
+document.querySelector(".thirteenth-task__right").addEventListener("click", rightRotation);
+let str = thirteenthInput.value;
+
+function leftRotation(){
+	let str = thirteenthInput.value;
+	let length = str.length;
+	let arr = str.split("")
+	for(let i = 0; i < length - 1; i++){
+		arr.push(arr[0]);
+		arr.shift();
+	}
+	str = arr.join("");
+	thirteenthOutput.innerHTML = str;
+}
+function rightRotation(){
+	let str = thirteenthInput.value;
+	let length = str.length;
+	let arr = str.split("")
+	for(let i = 0; i < length - 1; i++){
+		arr.unshift(arr[arr.length - 1]);
+		arr.pop();
+	}
+	str = arr.join("");
+	thirteenthOutput.innerHTML = str;
+}
