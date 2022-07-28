@@ -3,10 +3,6 @@
 let randomArray = [];
 const differenceInput = document.querySelector(".task__inpput");
 const differenceOutput = document.querySelector(".task__output");
-
-
-
-
 function randomArr(){
 	let randomInt;
 	let randomLength;
@@ -19,6 +15,8 @@ function randomArr(){
 		randomArray.push(randomInt);
 	}
 }
+
+
 // ! Task 1
 function diffBtwnNums(){
 	if(randomArray.length <= 1){
@@ -317,33 +315,27 @@ function objectInverting(){
 objectInverting();
 
 
-let inputX = document.querySelector(".fourteenth-task__x");
-let inputY = document.querySelector(".fourteenth-task__y");
-let inputZ = document.querySelector(".fourteenth-task__z");
-let inputW = document.querySelector(".fourteenth-task__w");
-let inputH = document.querySelector(".fourteenth-task__h");
+// ! Task 12
+let srcObj = { skate: 200, painting: 200, shoes: 1 }
+let insuranceAmount = 400
+const calcInsurance = (src = {}, insuranceAmount) => {
+	 console.log(Object.keys(src).length)
+	 if (!Object.keys(src).length) throw new Error('You have nothing to compare')
 
-const fourteenthApply = document.querySelector(".fourteenth-task__apply").addEventListener("click", brickFit);
-const fourteenthOutput = document.querySelector(".fourteenth-task__output");
-fourteenthOutput.innerHTML = 'Fill all parameters'
-function brickFit(){
-	let x = inputX.value;
-	let y = inputY.value;
-	let z = inputZ.value;
-	let w = inputW.value;
-	let h = inputH.value;
-	let brick = [x, y, z];
-	let hole = [w, h];
-	brick.sort();
-	brick.pop();
-	if(brick[0] <= hole[0] && brick[1] <= hole[1]){
-		fourteenthOutput.innerHTML = 'True'
-	}else{
-		fourteenthOutput.innerHTML = 'False'
-	}
+
+	 let totalCount = 0;
+	 for (const srcKey in src) {
+		  totalCount += src[srcKey]
+	 }
+
+	 if (totalCount < insuranceAmount) throw new Error('The cost of all things cannot be less than the sum of the general insurance')
+
+
+	 return totalCount - insuranceAmount
 }
+console.log('calcInsurance: ' + calcInsurance(srcObj, insuranceAmount))
 
-
+// ! Task 13
 let thirteenthInput = document.querySelector(".thirteenth-task__input");
 let thirteenthOutput = document.querySelector(".thirteenth-task__output");
 document.querySelector(".thirteenth-task__left").addEventListener("click", leftRotation);
@@ -371,4 +363,31 @@ function rightRotation(){
 	}
 	str = arr.join("");
 	thirteenthOutput.innerHTML = str;
+}
+
+// ! Task 14
+let inputX = document.querySelector(".fourteenth-task__x");
+let inputY = document.querySelector(".fourteenth-task__y");
+let inputZ = document.querySelector(".fourteenth-task__z");
+let inputW = document.querySelector(".fourteenth-task__w");
+let inputH = document.querySelector(".fourteenth-task__h");
+
+const fourteenthApply = document.querySelector(".fourteenth-task__apply").addEventListener("click", brickFit);
+const fourteenthOutput = document.querySelector(".fourteenth-task__output");
+fourteenthOutput.innerHTML = 'Fill all parameters'
+function brickFit(){
+	let x = inputX.value;
+	let y = inputY.value;
+	let z = inputZ.value;
+	let w = inputW.value;
+	let h = inputH.value;
+	let brick = [x, y, z];
+	let hole = [w, h];
+	brick.sort();
+	brick.pop();
+	if(brick[0] <= hole[0] && brick[1] <= hole[1]){
+		fourteenthOutput.innerHTML = 'True'
+	}else{
+		fourteenthOutput.innerHTML = 'False'
+	}
 }
