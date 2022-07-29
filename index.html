@@ -7,131 +7,174 @@
 	<title>Nix</title>
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
-<body>
-	<h1 class="title">First JS homework</h1>
-	<div class="task">
-		<h3 class="task__title">Task 1 <span ></span></h3>
-		<p class="task__title-descr">(Difference between values in array)</p>
-		<span class="task__inpput span field"></span>
-		<div class="task__inner">
-			<span class="task__arrow span">=></span>
-			<span class="task__output span"></span>
-			<button class="first-task__btn button">Reset</button>
+<body	class="page page__dark">
+	<main class="main">
+		<div class="container">
+			<h2 class="title" id="hw1">First JS homework</h2>
+			<div class="first-homework">
+				<div class="task">
+					<h3 class="task__title">Task 1 <span ></span></h3>
+					<p class="task__title-descr">(Difference between values in array)</p>
+					<p class="task__inpput span field"></p>
+					<div class="task__inner">
+						<span class="task__arrow span">=></span>
+						<span class="task__output span"></span>
+						<button class="first-task__btn button">Reset</button>
+					</div>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 2</h3>
+					<p class="task__title-descr">(Sorting words by length)</p>
+					<textarea class="second-task__input-text textarea"></textarea>
+					<div class="inner">
+						<input class="second-task__input-num field" type="number" placeholder="0">
+						<button class="second-task__apply button">Apply</button>
+					</div>
+					<p class="second-task__output span"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 3</h3>
+					<p class="task__title-descr">(Finding the missing digit)</p>
+					<p class="third-task__example field"></p>
+					<span>=></span>
+					<span class="third-task__output">0</span>
+					<button class="third-task__refresh button">Refresh</button>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 4</h3>
+					<p class="task__title-descr">(Comparing strings)</p>
+					<input class="fourth-task__first-input field" type="text" placeholder="Main string here">
+					<input class="fourth-task__second-input field" type="text" placeholder="Check for ending ">
+					<div class="fourth-task__inner">
+						<button class="fourth-task__check button">Check</button>
+						<p class="fourth-task__output"></p>
+					</div>
+					
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 5</h3>
+					<p class="task__title-descr">(Average between closest)</p>
+					<p class="fifth-task__example field"></p>
+					<p class="fifth-task__solution field"></p>
+					<button class="fifth-task__refresh button">Refresh</button>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 6</h3>
+					<p class="task__title-descr">(Sort descending)</p>
+					<input class="six-task__input field" type="text">
+					<p class="six-task__output field"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 7</h3>
+					<p class="task__title-descr">(Name score)</p>
+					<input class="seventh-task__input field" type="text" placeholder="Type your name here">
+					<p class="seventh-task__output field"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 8</h3>
+					<p class="task__title-descr">(Vowels and consonants)</p>
+					<textarea class="eight-task__input field" type="text" placeholder="Type your text"></textarea>
+					<p class="eight-task__vowels eight-task__output field"></p>
+					<p class="eight-task__consonants eight-task__output field"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 9</h3>
+					<p class="task__title-descr">(Remove letters from a string)</p>
+					<textarea class="nineth-task__input-text textarea" type="text" placeholder="Text to remove letters from"></textarea>
+					<input class="nineth-task__input-letters field" type="text" placeholder="Letters to removing">
+					<button class="nineth-task__apply button">Apply</button>
+					<p class="nineth-task__output field"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 10</h3>
+					<p class="task__title-descr">(Unique elements from two arrays)</p>
+					<p class="tenth-task__input-one field"></p>
+					<p class="tenth-task__input-two field"></p>
+					<button class="tenth-task__reset button">Reset</button>
+					<p class="tenth-task__output field"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 11</h3>
+					<p class="task__title-descr">(Inverted copy of the object)</p>
+					<textarea class="eleventh-task__input-text textarea" type="text" placeholder="{red: `#FF0000`,green: `#00FF00`,white: `#FFFFFF`}"></textarea>
+					<div class="eleventh-task__output preformated"></div>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 12</h3>
+					<p class="task__title-descr">(String rotation)</p>
+					
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 13</h3>
+					<p class="task__title-descr">(String rotation)</p>
+					<input class="thirteenth-task__input field" type="text">
+					<button class="thirteenth-task__left button">To left</button>
+					<button class="thirteenth-task__right button">To right</button>
+					<p class="thirteenth-task__output field"></p>
+				</div>
+				<div class="task">
+					<h3 class="task__title">Task 14</h3>
+					<p class="task__title-descr">(Will the brick fit in the hole?)</p>
+					<fieldset class="brick-form">
+						<legend>Brick</legend>
+						<label>x - <input class="fourteenth-task__x input-num" type="number"></label>
+						<label>y - <input class="fourteenth-task__y input-num" type="number"></label>
+						<label>z - <input class="fourteenth-task__z input-num" type="number"></label>
+					</fieldset>
+					<fieldset class="brick-form">
+						<legend>Hole</legend>
+						<label>w - <input class="fourteenth-task__w input-num" type="number"></label>
+						<label>h - <input class="fourteenth-task__h input-num" type="number"></label>
+					</fieldset>
+					<div class="fourteenth-task__inner">
+						<button class="fourteenth-task__apply button">Apply</button>
+						<p class="fourteenth-task__output field"></p>
+					</div>
+				</div>
+			</div>
+			<h2 class="title" id="hw2">Second JS homework</h2>
+			<div class="second-homework">
+				<div class="task">
+					<h3 class="task__title">Task 1</h3>
+					<p class="task__title-descr">(Sending data to another page)</p>
+					<input class="redirect__input field" type="text" placeholder="Type your name">
+					<button class="redirect__btn button">Confirm</button>
+				</div>
+			</div>
+			<h2 class="title" id="hw3">Third JS homework</h2>
 		</div>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 2</h3>
-		<p class="task__title-descr">(Sorting words by length)</p>
-		<textarea class="second-task__input-text textarea"></textarea>
-		<div class="inner">
-			<input class="second-task__input-num span" type="number" placeholder="0">
-			<button class="second-task__apply button">Apply</button>
-		</div>
-		<p class="second-task__output span"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 3</h3>
-		<p class="task__title-descr">(Finding the missing digit)</p>
-		<span class="third-task__example"></span>
-		<span>=></span>
-		<span class="third-task__output">0</span>
-		<button class="third-task__refresh button">Refresh</button>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 4</h3>
-		<p class="task__title-descr">(Comparing strings)</p>
-		<input class="fourth-task__first-input field" type="text" placeholder="Main string here">
-		<input class="fourth-task__second-input field" type="text" placeholder="Check for ending ">
-		<div class="fourth-task__inner">
-			<button class="fourth-task__check button">Check</button>
-			<p class="fourth-task__output"></p>
-		</div>
-		
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 5</h3>
-		<p class="task__title-descr">(Average between closest)</p>
-		<p class="fifth-task__example field"></p>
-		<p class="fifth-task__solution field"></p>
-		<button class="fifth-task__refresh button">Refresh</button>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 6</h3>
-		<p class="task__title-descr">(Sort descending)</p>
-		<input class="six-task__input field" type="text">
-		<p class="six-task__output field"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 7</h3>
-		<p class="task__title-descr">(Name score)</p>
-		<input class="seventh-task__input field" type="text" placeholder="Type your name here">
-		<p class="seventh-task__output field"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 8</h3>
-		<p class="task__title-descr">(Vowels and consonants)</p>
-		<textarea class="eight-task__input field" type="text" placeholder="Type your text"></textarea>
-		<p class="eight-task__vowels eight-task__output field"></p>
-		<p class="eight-task__consonants eight-task__output field"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 9</h3>
-		<p class="task__title-descr">(Remove letters from a string)</p>
-		<textarea class="nineth-task__input-text textarea" type="text" placeholder="Text to remove letters from"></textarea>
-		<input class="nineth-task__input-letters field" type="text" placeholder="Letters to removing">
-		<button class="nineth-task__apply button">Apply</button>
-		<p class="nineth-task__output field"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 10</h3>
-		<p class="task__title-descr">(Unique elements from two arrays)</p>
-		<p class="tenth-task__input-one field"></p>
-		<p class="tenth-task__input-two field"></p>
-		<button class="tenth-task__reset button">Reset</button>
-		<p class="tenth-task__output field"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 11</h3>
-		<p class="task__title-descr">(Inverted copy of the object)</p>
-		<textarea class="eleventh-task__input-text textarea" type="text" placeholder="
-{
-	red: `#FF0000`,
-	green: `#00FF00`,
-	white: `#FFFFFF`
-}"></textarea>
-		<div class="eleventh-task__output preformated"></div>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 12</h3>
-		<p class="task__title-descr">(String rotation)</p>
-		
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 13</h3>
-		<p class="task__title-descr">(String rotation)</p>
-		<input class="thirteenth-task__input field" type="text">
-		<button class="thirteenth-task__left button">To left</button>
-		<button class="thirteenth-task__right button">To right</button>
-		<p class="thirteenth-task__output field"></p>
-	</div>
-	<div class="task">
-		<h3 class="task__title">Task 14</h3>
-		<p class="task__title-descr">(Will the brick fit in the hole?)</p>
-		<fieldset class="brick-form">
-			<legend>Brick</legend>
-			<label>x - <input class="fourteenth-task__x input-num" type="number"></label>
-			<label>y - <input class="fourteenth-task__y input-num" type="number"></label>
-			<label>z - <input class="fourteenth-task__z input-num" type="number"></label>
-		</fieldset>
-		<fieldset class="brick-form">
-			<legend>Hole</legend>
-			<label>w - <input class="fourteenth-task__w input-num" type="number"></label>
-			<label>h - <input class="fourteenth-task__h input-num" type="number"></label>
-		</fieldset>
-		<div class="fourteenth-task__inner">
-			<button class="fourteenth-task__apply button">Apply</button>
-			<p class="fourteenth-task__output field"></p>
-		</div>
+		<aside class="aside">
+
+
+			<ul class="menu">
+				<li class="menu__item">
+					<button class="menu__btn">
+						<span class="menu__bg"></span>
+						<span class="menu__line menu__line-1"></span>
+						<span class="menu__line menu__line-2"></span>
+						<span class="menu__line menu__line-3"></span>
+					</button>
+				</li>
+				<li class="menu__item">
+					<button class="theme">
+						<span class="theme__bg"></span>
+					</button>
+				</li>
+				<li class="menu__item">
+					<a href="#hw1" class="menu__link">1st HW</a>
+				</li>
+				<li class="menu__item">
+					<a href="#hw2" class="menu__link">2nd HW</a>
+				</li>
+				<li class="menu__item">
+					<a href="#hw3" class="menu__link">3rd HW</a>
+				</li>
+			</ul>
+		</aside>
+	</main>
+	<footer class="footer"></footer>
+	<div class="progress">
+		<div class="progress__value"></div>
 	</div>
 	<script src="js/main.js"></script>
 </body>

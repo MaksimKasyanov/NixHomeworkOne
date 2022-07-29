@@ -5,14 +5,119 @@ html{
 	}
 }
 body{
-	background-color: #181818;
-	color: #fff;
-	font-size: 18px;
-	padding: 50px 20px 0;
 
+	font-size: 18px;
 }
-h3{
-	font-size: 22px;
+.page{
+	&__dark{
+		background-color: #181818;
+		color: #fff;
+	}
+}
+.aside{
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 70px;
+	height: 100vh;
+	background-color: rgba(255, 255, 255, 0.05);
+	border-left: 1px solid rgba(255, 255, 255, 0.5);
+	// box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.7);
+}
+.menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 10px;
+	height: 50px;
+	transition: all .5s;
+	overflow: hidden;
+	&__btn{
+		position: relative;
+		width: 50px;
+		height: 50px;
+		box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+	}
+	&__bg{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #181818;
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+	}
+	&__item{
+		margin-bottom: 20px;
+	}
+	&__link{
+		color: #fff;
+		text-align: center;
+		display: block;
+		font-size: 12px;
+		background-color: #181818;
+		width: 70px;
+	}
+	&__line-1,
+	&__line-2,
+	&__line-3 {
+		position: absolute;
+		top: 50%;
+		left: 10px;
+		// transform: translate(-50%, -50%);
+		width: calc(100% - 20px);
+		height: 1px;
+		background-color: #fff;
+		transition: all .5s;
+	}
+	&__line-1{
+		top: calc(50% - 7px);
+	}
+	&__line-3{
+		top: calc(50% + 7px);
+	}
+	&__active{
+		height: 350px;
+		.menu {
+			&__line-1{
+				top: calc(50%);
+				transform: rotate(-45deg);
+			}
+			&__line-2 {
+				width: 0;
+				left: 50%;
+				opacity: 0;
+			}
+			&__line-3{
+				top: calc(50%);
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+.theme{
+	position: relative;
+	width: 50px;
+	height: 50px;
+	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+	&__bg{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: #181818;
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+	}
+}
+
+.main{
+	padding-top: 50px;
+	display: flex;
+}
+.container{
+	width: calc(100vw - 70px);
+	height: 100%;
 }
 .title{
 	text-align: center;
@@ -21,9 +126,10 @@ h3{
 }
 .task {
 	margin-bottom: 30px;
-	padding-bottom: 20px;
+	padding: 0 20px 20px;
 	border-bottom: 1px solid #fff;
 	&__title {
+		font-size: 22px;
 	}
 
 	&__title-descr {
@@ -33,7 +139,7 @@ h3{
 
 .button,
 .arrow{
-	color: #fff;
+	color: inherit;
 	width: 80px;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 10px;
@@ -45,15 +151,6 @@ h3{
 	width: 45px;
 	margin-bottom: 20px;
 }
-.array{
-
-}
-.span{
-	display: inline-block;
-	background-color: rgba(255, 255, 255, 0.1);
-	padding: 10px;
-	border-radius: 4px;
-}
 .field{
 	color: #fff;
 	background-color: rgba(255, 255, 255, 0.1);
@@ -63,9 +160,8 @@ h3{
 	width: 100%;
 	height: 45px;
 }
-
 .textarea{
-	color: #fff;
+	color: inherit;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 10px;
 	border-radius: 4px;
@@ -165,7 +261,50 @@ h3{
 	border-radius: 4px;
 	margin-bottom: 10px;
 	width: 100%;
-	height: 200px;
+	height: 90px;
 	display: flex;
 	word-wrap: break-word;
+}
+.eleventh-task__input-text{
+	height: 90px;
+	padding-top: 10px;
+}
+
+
+
+.browser-version{
+	position: fixed;
+	bottom: 0px;
+	left: 0;
+	width: calc(100% - 70px);
+	height: 50px;
+	background-color: #181818;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-top: 1px solid #fff;
+}
+
+.progress {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	width: 50px;
+	height: 50px;
+	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.8);
+	&__value {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+		background-color: #181818;
+		font-size: 12px;
+	}
 }
