@@ -424,14 +424,9 @@ window.onscroll = scrollPercentage;
 window.onload = scrollPercentage;
 
 // ! Task 2
-// localStorage.infos="aaaa";
-// localStorage["infos"]="aaaa";
-// localStorage.setItem("infos","aaaa");
-
 let redirectData = document.querySelector(".redirect__input")
 document.querySelector(".redirect__btn").addEventListener("click", redirect);
 function redirect() {
-
 	localStorage.infos = redirectData.value;
 	localStorage["infos"] = redirectData.value;
 	localStorage.setItem("infos", redirectData.value);
@@ -440,11 +435,33 @@ function redirect() {
 }
 // ! Task 3
 // ? Theme switcher
-
 // ! Task 4
 // ? Block right mouse button & Ctrl+u
-
 // ! Task 5
+let inactivityTime = function () {
+	let t;
+	window.onload = resetTimer;
+	document.onmousemove = resetTimer;
+	document.onkeypress = resetTimer;
+
+	function logout() {
+		let result = confirm('Are you sure you want to delete?');
+		if(result){
+
+		}else{
+			window.close();
+		}
+	}
+
+	function resetTimer() {
+		 clearTimeout(t);
+		 t = setTimeout(logout, 300000)
+	}
+};
+inactivityTime();
+
+
+
 
 
 
