@@ -179,21 +179,21 @@ function matches(){
 }
 
 // ! Task 8
-let eighthData = document.querySelector(".eight-task__input");
-let vowelsOutput = document.querySelector(".eight-task__vowels");
-let consonantsOutput = document.querySelector(".eight-task__consonants");
-document.querySelector(".eight-task__input").addEventListener("input", countLeters);
-let vowels = "0";
-let consonants = "0";
-function countLeters(){
-	let eighthString = eighthData.value;
-	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
-	let vowels = vowelsLenght ? vowelsLenght : 0;
-	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
-	let consonants = consonantsLenght ? consonantsLenght : 0
-	vowelsOutput.innerHTML = vowels;
-	consonantsOutput.innerHTML = consonants;
-}
+// let eighthData = document.querySelector(".eight-task__input");
+// let vowelsOutput = document.querySelector(".eight-task__vowels");
+// let consonantsOutput = document.querySelector(".eight-task__consonants");
+// document.querySelector(".eight-task__input").addEventListener("input", countLeters);
+// let vowels = "0";
+// let consonants = "0";
+// function countLeters(){
+// 	let eighthString = eighthData.value;
+// 	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
+// 	let vowels = vowelsLenght ? vowelsLenght : 0;
+// 	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
+// 	let consonants = consonantsLenght ? consonantsLenght : 0
+// 	vowelsOutput.innerHTML = vowels;
+// 	consonantsOutput.innerHTML = consonants;
+// }
 
 
 // ! Task 9
@@ -222,9 +222,6 @@ function removeLetters(){
 	console.log(createRegex);
 	console.log(matching);
 }
-
-
-
 
 //  ! Task 10
 let tenthFirstArr = document.querySelector(".tenth-task__input-one");
@@ -398,28 +395,19 @@ document.querySelector(".menu__btn").addEventListener("click", menu);
 function menu(){
 	let menu = document.querySelector(".menu");
 	menu.classList.toggle("menu__active");
+	let version = document.querySelector(".browser-version");
+	version.classList.toggle("browser-version__active");
 }
-document.querySelector(".theme").addEventListener("click", theme);
-function theme(){
-	let page = document.querySelector(".page");
-	page.classList.toggle("page__light");
-	page.classList.toggle("page__dark");
+document.querySelector(".theme-btn").addEventListener("click", themeSwitcer);
+function themeSwitcer() {
+	let themeBtn = document.querySelector(".theme-btn");
+	themeBtn.classList.toggle("theme-btn__active");
+	let theme = document.querySelector(".page");
+	theme.classList.toggle("page__dark");
+	theme.classList.toggle("page__light");
 }
 
-const anchors = document.querySelectorAll('a.menu-list__link')
 
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
-    
-    const blockID = anchor.getAttribute('href')
-    
-    document.querySelector(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
-}
 
 // ? SECOND JS HOMEWORK
 // ! Task 1
@@ -451,7 +439,11 @@ function redirect() {
 	
 }
 // ! Task 3
+// ? Theme switcher
+
 // ! Task 4
+// ? Block right mouse button & Ctrl+u
+
 // ! Task 5
 
 
@@ -476,7 +468,20 @@ document.write('<p class="browser-version">' + 'You using ' + navigator.sayswho 
 
 
 // ! Task 7
+const anchors = document.querySelectorAll('a.menu-list__link')
 
+for (let anchor of anchors) {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault()
+    
+    const blockID = anchor.getAttribute('href')
+    
+    document.querySelector(blockID).scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
+    })
+  })
+}
 
 
 // ! Additional task 1
@@ -492,17 +497,14 @@ console.log(dayWeek)
 
 
 // ! Additional task 4
+// document.ondragstart = noselect;
+// document.onselectstart = noselect;
+// document.oncontextmenu = noselect;
+// function noselect() {return false;} 
 
-
-
-document.ondragstart = noselect;
-document.onselectstart = noselect;
-document.oncontextmenu = noselect;
-function noselect() {return false;} 
-
-window.onkeydown = function(evt) {
-	if(evt.keyCode == 123) return false;
-};
-window.onkeypress = function(evt) {
-	if(evt.keyCode == 123) return false;
-};
+// window.onkeydown = function(evt) {
+// 	if(evt.keyCode == 123) return false;
+// };
+// window.onkeypress = function(evt) {
+// 	if(evt.keyCode == 123) return false;
+// };
