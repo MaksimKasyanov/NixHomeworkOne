@@ -99,6 +99,10 @@ body{
 		font-size: 12px;
 		background-color: #181818;
 		width: 70px;
+		font-size: 20px;
+		padding: 5px 0;
+		border-top: 1px solid #fff;
+		border-bottom: 1px solid #fff;
 	}
 	&__line-1,
 	&__line-2,
@@ -207,7 +211,7 @@ body{
 .button,
 .arrow{
 	color: inherit;
-	width: 80px;
+	min-width: 80px;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 10px;
 	border-radius: 4px;
@@ -337,8 +341,37 @@ body{
 	padding-top: 10px;
 }
 
+.div {
+	&__wrapper{
+		height: 80px;
+		margin-bottom: 20px;
+	}
+	&__container {
+		background-color: rgba(255, 255, 255, 0.274);
+		position: absolute;
+		height: 80px;
+		width: calc(100vw - 70px);
+		left: 0;
+	}
+	&__item{
+		position: absolute;
+		left: 0px;
+		top: 0;
+		width: 80px;
+		height: 80px;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
 
-
+.task-two__input{
+	height: 50px;
+}
+.task-two__output-item{
+	color: #fff;
+}
 .browser-version{
 	position: fixed;
 	bottom: -50px;
@@ -381,6 +414,24 @@ body{
 		color: inherit;
 		border-radius: 50%;
 	}
+}
+.is-loaded{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: rgb(126, 126, 126);
+	padding: 5px;
+	font-size: 12px;
+	visibility: hidden;
+	&__active{
+		visibility: visible;
+	}
+}
+.day-of-week{
+	color: #000;
+	text-align: center;
+	user-select: none;
+
 }
 @media (min-width: 1280px) {
 	.main{

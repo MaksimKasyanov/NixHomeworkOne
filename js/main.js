@@ -424,41 +424,58 @@ window.onscroll = scrollPercentage;
 window.onload = scrollPercentage;
 
 // ! Task 2
-let redirectData = document.querySelector(".redirect__input")
+let redirectDataValidation = document.querySelector(".redirect__input").addEventListener("input", formValidation);
+function formValidation(){
+	let data = redirectData.value;
+	data.replace(/[^a-z]/g, '');
+	redirectData.value = data.replace(/[^a-z]/gi, '');
+}
+
+
+let redirectData = document.querySelector(".redirect__input");
 document.querySelector(".redirect__btn").addEventListener("click", redirect);
 function redirect() {
 	localStorage.infos = redirectData.value;
 	localStorage["infos"] = redirectData.value;
 	localStorage.setItem("infos", redirectData.value);
 	let newWindow = window.open('redirect.html?&');
-	
 }
 // ! Task 3
 // ? Theme switcher
 // ! Task 4
-// ? Block right mouse button & Ctrl+u
+// document.ondragstart = noselect;
+// document.onselectstart = noselect;
+// document.oncontextmenu = noselect;
+// function noselect() {return false;} 
+
+// window.onkeydown = function(evt) {
+// 	if(evt.keyCode == 123) return false;
+// };
+// window.onkeypress = function(evt) {
+// 	if(evt.keyCode == 123) return false;
+// };
 // ! Task 5
-let inactivityTime = function () {
-	let t;
-	window.onload = resetTimer;
-	document.onmousemove = resetTimer;
-	document.onkeypress = resetTimer;
+// let inactivityTime = function () {
+// 	let t;
+// 	window.onload = resetTimer;
+// 	document.onmousemove = resetTimer;
+// 	document.onkeypress = resetTimer;
 
-	function logout() {
-		let result = confirm('Are you sure you want to delete?');
-		if(result){
+// 	function logout() {
+// 		let result = confirm('Are you sure you want to delete?');
+// 		if(result){
 
-		}else{
-			window.close();
-		}
-	}
+// 		}else{
+// 			window.close();
+// 		}
+// 	}
 
-	function resetTimer() {
-		 clearTimeout(t);
-		 t = setTimeout(logout, 300000)
-	}
-};
-inactivityTime();
+// 	function resetTimer() {
+// 		 clearTimeout(t);
+// 		 t = setTimeout(logout, 300000)
+// 	}
+// };
+// inactivityTime();
 
 
 
@@ -502,26 +519,117 @@ for (let anchor of anchors) {
 
 
 // ! Additional task 1
-
+document.querySelector(".div__item").addEventListener("click", moveBlock);
+const div = document.querySelector(".div__item");
+document.querySelector(".div__button").addEventListener("click", flagDown);
+let pathLength = document.documentElement.clientWidth - div.offsetWidth - 70;
+let path = "0";
+let i = 1;
+let flag = true;
+function flagDown(){
+	flag = !flag;
+	moveBlock();
+}
+function moveBlock(){
+	
+	if(flag === true){
+	setTimeout(function move() {
+		path = path.replace(/[a-z]/g, '')
+		path = Number(path) + 1;
+		path += 'px'
+		div.style.left = path;
+		if (i < pathLength) {
+			console.log(i)
+			i++;
+			moveBlock();
+		}else{
+			i = 0;
+			path = '0px'
+			moveBlock();
+		}
+	}, 5);
+	}
+}
 
 // ! Additional task 2
-
+let isLoaded = document.querySelector(".is-loaded");
+window.onload = function(){
+	isLoaded.classList.add("is-loaded__active");
+}
+document.querySelector(".loaded__toggle").addEventListener("click", loadedToggle);
+function loadedToggle(){
+	isLoaded.classList.toggle("is-loaded__active");
+}
 
 // ! Additional task 3
+let dayToDiv = document.querySelector(".day-of-week");
 let date = new Date();
 let dayWeek = [7, 1, 2, 3, 4, 5, 6][date.getDay()];
-console.log(dayWeek)
+dayToDiv.innerHTML = `Today is a ${dayWeek} day of week`
 
 
 // ! Additional task 4
-// document.ondragstart = noselect;
-// document.onselectstart = noselect;
-// document.oncontextmenu = noselect;
-// function noselect() {return false;} 
+let listInput = document.querySelector(".task-two__input");
+document.querySelector(".task-two__apply").addEventListener("click", listTreatment);
+let listOutput = document.querySelector(".task-two__output");
+let ul = document.querySelector('.task-two__output');
+let li = document.createElement('li');
+function listTreatment(){
+	let listData = listInput.value;
+	let data = listData.replace(/[^a-z]/gi, '');
+	data = listData.replace(/[^\s/a-z]/gi, '');
+	let dataArr = data.split(" ");
+	console.log(dataArr);
+	let liFirst = document.createElement('li');
+	let liSecond = document.createElement('li');
+	let liThird = document.createElement('li');
+	liFirst.remove();
+	liSecond.remove();
+	liThird.remove();
+	if(dataArr.length === 1){
+		liFirst.classList.add("task-two__output-item");
+		liFirst.innerHTML = dataArr[0].toUpperCase();
+		ul.append(liFirst);
+	}
+	if(dataArr.length === 2){
+		// let liFirst = document.createElement('li');
+		liFirst.classList.add("task-two__output-item");
+		liFirst.innerHTML = dataArr[0].toUpperCase();
+		ul.append(liFirst);
+		liSecond.classList.add("task-two__output-item");
+		liSecond.innerHTML = dataArr[1];
+		ul.append(liSecond);
+	}
+	if(dataArr.length === 3){
+		// let liFirst = document.createElement('li');
+		liFirst.classList.add("task-two__output-item");
+		liFirst.innerHTML = dataArr[0].toUpperCase();
+		ul.append(liFirst);
+		// let liSecond = document.createElement('li');
+		liSecond.classList.add("task-two__output-item");
+		liSecond.innerHTML = dataArr[1];
+		ul.append(liSecond);
+		liThird.classList.add("task-two__output-item");
+		liThird.innerHTML = dataArr[2];
+		ul.append(liThird);
+	}
 
-// window.onkeydown = function(evt) {
-// 	if(evt.keyCode == 123) return false;
-// };
-// window.onkeypress = function(evt) {
-// 	if(evt.keyCode == 123) return false;
-// };
+}
+
+
+
+
+// if(dataArr.length === 1){
+		
+// 	// ul.lastChild.remove()
+// 	li.className = 'task-two__output-item';
+// 	li.innerHTML = dataArr[0].toUpperCase();
+// 	ul.insertBefore(li, ul.lastChild);
+// }
+// if(dataArr.length === 2){
+	
+// 	// ul.lastChild.remove()
+// 	li.className = 'task-two__output-item2';
+// 	li.innerHTML = dataArr[1];
+// 	ul.insertBefore(li, ul.lastChild);
+// }
