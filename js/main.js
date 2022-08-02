@@ -179,21 +179,21 @@ function matches(){
 }
 
 // ! Task 8
-// let eighthData = document.querySelector(".eight-task__input");
-// let vowelsOutput = document.querySelector(".eight-task__vowels");
-// let consonantsOutput = document.querySelector(".eight-task__consonants");
-// document.querySelector(".eight-task__input").addEventListener("input", countLeters);
-// let vowels = "0";
-// let consonants = "0";
-// function countLeters(){
-// 	let eighthString = eighthData.value;
-// 	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
-// 	let vowels = vowelsLenght ? vowelsLenght : 0;
-// 	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
-// 	let consonants = consonantsLenght ? consonantsLenght : 0
-// 	vowelsOutput.innerHTML = vowels;
-// 	consonantsOutput.innerHTML = consonants;
-// }
+let eighthData = document.querySelector(".eight-task__input");
+let vowelsOutput = document.querySelector(".eight-task__vowels");
+let consonantsOutput = document.querySelector(".eight-task__consonants");
+document.querySelector(".eight-task__input").addEventListener("input", countLeters);
+let vowels = "0";
+let consonants = "0";
+function countLeters(){
+	let eighthString = eighthData.value;
+	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
+	let vowels = vowelsLenght ? vowelsLenght : 0;
+	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
+	let consonants = consonantsLenght ? consonantsLenght : 0
+	vowelsOutput.innerHTML = vowels;
+	consonantsOutput.innerHTML = consonants;
+}
 
 
 // ! Task 9
@@ -443,39 +443,39 @@ function redirect() {
 // ! Task 3
 // ? Theme switcher
 // ! Task 4
-// document.ondragstart = noselect;
-// document.onselectstart = noselect;
-// document.oncontextmenu = noselect;
-// function noselect() {return false;} 
+document.ondragstart = noselect;
+document.onselectstart = noselect;
+document.oncontextmenu = noselect;
+function noselect() {return false;} 
 
-// window.onkeydown = function(evt) {
-// 	if(evt.keyCode == 123) return false;
-// };
-// window.onkeypress = function(evt) {
-// 	if(evt.keyCode == 123) return false;
-// };
+window.onkeydown = function(evt) {
+	if(evt.keyCode == 123) return false;
+};
+window.onkeypress = function(evt) {
+	if(evt.keyCode == 123) return false;
+};
 // ! Task 5
-// let inactivityTime = function () {
-// 	let t;
-// 	window.onload = resetTimer;
-// 	document.onmousemove = resetTimer;
-// 	document.onkeypress = resetTimer;
+let inactivityTime = function () {
+	let t;
+	window.onload = resetTimer;
+	document.onmousemove = resetTimer;
+	document.onkeypress = resetTimer;
 
-// 	function logout() {
-// 		let result = confirm('Are you sure you want to delete?');
-// 		if(result){
+	function logout() {
+		let result = confirm('Are you sure you want to delete?');
+		if(result){
 
-// 		}else{
-// 			window.close();
-// 		}
-// 	}
+		}else{
+			window.close();
+		}
+	}
 
-// 	function resetTimer() {
-// 		 clearTimeout(t);
-// 		 t = setTimeout(logout, 300000)
-// 	}
-// };
-// inactivityTime();
+	function resetTimer() {
+		 clearTimeout(t);
+		 t = setTimeout(logout, 300000)
+	}
+};
+inactivityTime();
 
 
 
@@ -625,22 +625,3 @@ function listTreatment(){
 	}
 }
 
-function clone(){
-	listTreatment()
-}
-
-
-// if(dataArr.length === 1){
-		
-// 	// ul.lastChild.remove()
-// 	li.className = 'task-two__output-item';
-// 	li.innerHTML = dataArr[0].toUpperCase();
-// 	ul.insertBefore(li, ul.lastChild);
-// }
-// if(dataArr.length === 2){
-	
-// 	// ul.lastChild.remove()
-// 	li.className = 'task-two__output-item2';
-// 	li.innerHTML = dataArr[1];
-// 	ul.insertBefore(li, ul.lastChild);
-// }
