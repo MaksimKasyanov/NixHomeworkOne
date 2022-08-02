@@ -498,7 +498,7 @@ navigator.sayswho= (function(){
 	if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
 	return M.join(' ');
 })();
-document.write('<p class="browser-version">' + 'You using ' + navigator.sayswho + '!</p>');
+document.write('<p class="browser-version">' + 'You are using ' + navigator.sayswho + '!</p>');
 
 
 // ! Task 7
@@ -539,7 +539,6 @@ function moveBlock(){
 		path += 'px'
 		div.style.left = path;
 		if (i < pathLength) {
-			console.log(i)
 			i++;
 			moveBlock();
 		}else{
@@ -575,48 +574,60 @@ let listOutput = document.querySelector(".task-two__output");
 let ul = document.querySelector('.task-two__output');
 let li = document.createElement('li');
 function listTreatment(){
+	ul.innerHTML = "";
 	let listData = listInput.value;
-	let data = listData.replace(/[^a-z]/gi, '');
+	let data;
 	data = listData.replace(/[^\s/a-z]/gi, '');
 	let dataArr = data.split(" ");
-	console.log(dataArr);
 	let liFirst = document.createElement('li');
 	let liSecond = document.createElement('li');
 	let liThird = document.createElement('li');
-	liFirst.remove();
-	liSecond.remove();
-	liThird.remove();
+	let liCount = document.createElement('li');
+	const letterA = listData.match(/[a]/gi).length;
 	if(dataArr.length === 1){
 		liFirst.classList.add("task-two__output-item");
 		liFirst.innerHTML = dataArr[0].toUpperCase();
 		ul.append(liFirst);
+
+		liCount.classList.add("task-two__output-item");
+		liCount.innerHTML = 'There are ' + letterA + ' letters "a"';
+		ul.append(liCount);
 	}
 	if(dataArr.length === 2){
-		// let liFirst = document.createElement('li');
 		liFirst.classList.add("task-two__output-item");
 		liFirst.innerHTML = dataArr[0].toUpperCase();
 		ul.append(liFirst);
 		liSecond.classList.add("task-two__output-item");
 		liSecond.innerHTML = dataArr[1];
 		ul.append(liSecond);
+		liCount.classList.add("task-two__output-item");
+		liCount.innerHTML = 'There are ' + letterA + ' letters "a"';
+		ul.append(liCount);
 	}
 	if(dataArr.length === 3){
-		// let liFirst = document.createElement('li');
 		liFirst.classList.add("task-two__output-item");
 		liFirst.innerHTML = dataArr[0].toUpperCase();
 		ul.append(liFirst);
-		// let liSecond = document.createElement('li');
 		liSecond.classList.add("task-two__output-item");
 		liSecond.innerHTML = dataArr[1];
 		ul.append(liSecond);
 		liThird.classList.add("task-two__output-item");
 		liThird.innerHTML = dataArr[2];
 		ul.append(liThird);
+		liCount.classList.add("task-two__output-item");
+		liCount.innerHTML = 'There are ' + letterA + ' letters "a"';
+		ul.append(liCount);
 	}
-
+	if(dataArr.length >= 4){
+		liFirst.classList.add("task-two__output-item");
+		liFirst.innerHTML = 'Please write 3 words';
+		ul.append(liFirst);
+	}
 }
 
-
+function clone(){
+	listTreatment()
+}
 
 
 // if(dataArr.length === 1){
