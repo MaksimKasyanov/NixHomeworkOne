@@ -25,7 +25,7 @@ function diffBtwnNums(){
 		differenceOutput.innerHTML = 0; 
 	}else{
 		const outputStr = randomArray.join(", ");
-		differenceInput.innerHTML = '[' + outputStr + ']';
+		// differenceInput.innerHTML = '[' + outputStr + ']';
 		differenceOutput.innerHTML = Math.max(...randomArray) - Math.min(...randomArray); 
 	}
 }
@@ -179,21 +179,21 @@ function matches(){
 }
 
 // ! Task 8
-let eighthData = document.querySelector(".eight-task__input");
-let vowelsOutput = document.querySelector(".eight-task__vowels");
-let consonantsOutput = document.querySelector(".eight-task__consonants");
-document.querySelector(".eight-task__input").addEventListener("input", countLeters);
-let vowels = "0";
-let consonants = "0";
-function countLeters(){
-	let eighthString = eighthData.value;
-	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
-	let vowels = vowelsLenght ? vowelsLenght : 0;
-	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
-	let consonants = consonantsLenght ? consonantsLenght : 0
-	vowelsOutput.innerHTML = vowels;
-	consonantsOutput.innerHTML = consonants;
-}
+// let eighthData = document.querySelector(".eight-task__input");
+// let vowelsOutput = document.querySelector(".eight-task__vowels");
+// let consonantsOutput = document.querySelector(".eight-task__consonants");
+// document.querySelector(".eight-task__input").addEventListener("input", countLeters);
+// let vowels = "0";
+// let consonants = "0";
+// function countLeters(){
+// 	let eighthString = eighthData.value;
+// 	const vowelsLenght = eighthString.match(/[aeiou]/gi)?.length;
+// 	let vowels = vowelsLenght ? vowelsLenght : 0;
+// 	const consonantsLenght = eighthString.match(/[bcdfghjklmnpqrstvwxyz]/gi)?.length;
+// 	let consonants = consonantsLenght ? consonantsLenght : 0
+// 	vowelsOutput.innerHTML = vowels;
+// 	consonantsOutput.innerHTML = consonants;
+// }
 
 
 // ! Task 9
@@ -440,82 +440,82 @@ function redirect() {
 	localStorage.setItem("infos", redirectData.value);
 	let newWindow = window.open('redirect.html?&');
 }
-// ! Task 3
-// ? Theme switcher
-// ! Task 4
-document.ondragstart = noselect;
-document.onselectstart = noselect;
-document.oncontextmenu = noselect;
-function noselect() {return false;} 
+// // ! Task 3
+// // ? Theme switcher
+// // ! Task 4
+// document.ondragstart = noselect;
+// document.onselectstart = noselect;
+// document.oncontextmenu = noselect;
+// function noselect() {return false;} 
 
-window.onkeydown = function(evt) {
-	if(evt.keyCode == 123) return false;
-};
-window.onkeypress = function(evt) {
-	if(evt.keyCode == 123) return false;
-};
-// ! Task 5
-let inactivityTime = function () {
-	let t;
-	window.onload = resetTimer;
-	document.onmousemove = resetTimer;
-	document.onkeypress = resetTimer;
+// window.onkeydown = function(evt) {
+// 	if(evt.keyCode == 123) return false;
+// };
+// window.onkeypress = function(evt) {
+// 	if(evt.keyCode == 123) return false;
+// };
+// // ! Task 5
+// let inactivityTime = function () {
+// 	let t;
+// 	window.onload = resetTimer;
+// 	document.onmousemove = resetTimer;
+// 	document.onkeypress = resetTimer;
 
-	function logout() {
-		let result = confirm('Are you sure you want to delete?');
-		if(result){
+// 	function logout() {
+// 		let result = confirm('Are you here?');
+// 		if(result){
 
-		}else{
-			window.close();
-		}
-	}
+// 		}else{
+// 			window.close();
+// 		}
+// 	}
 
-	function resetTimer() {
-		 clearTimeout(t);
-		 t = setTimeout(logout, 300000)
-	}
-};
-inactivityTime();
-
-
+// 	function resetTimer() {
+// 		 clearTimeout(t);
+// 		 t = setTimeout(logout, 300000);
+// 	}
+// };
+// inactivityTime();
 
 
 
 
-// ! Task 6
-navigator.sayswho= (function(){
-	var ua= navigator.userAgent, tem, 
-	M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-	if(/trident/i.test(M[1])){
-		 tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
-		 return 'IE '+(tem[1] || '');
-	}
-	if(M[1]=== 'Chrome'){
-		 tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
-		 if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
-	}
-	M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
-	if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
-	return M.join(' ');
-})();
-document.write('<p class="browser-version">' + 'You are using ' + navigator.sayswho + '!</p>');
 
 
-// ! Task 7
-const anchors = document.querySelectorAll('a.menu-list__link')
+// // ! Task 6
+// navigator.sayswho= (function(){
+// 	var ua= navigator.userAgent, tem, 
+// 	M= ua.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+// 	if(/trident/i.test(M[1])){
+// 		 tem=  /\brv[ :]+(\d+)/g.exec(ua) || [];
+// 		 return 'IE '+(tem[1] || '');
+// 	}
+// 	if(M[1]=== 'Chrome'){
+// 		 tem= ua.match(/\b(OPR|Edge)\/(\d+)/);
+// 		 if(tem!= null) return tem.slice(1).join(' ').replace('OPR', 'Opera');
+// 	}
+// 	M= M[2]? [M[1], M[2]]: [navigator.appName, navigator.appVersion, '-?'];
+// 	if((tem= ua.match(/version\/(\d+)/i))!= null) M.splice(1, 1, tem[1]);
+// 	return M.join(' ');
+// })();
+// document.write('<p class="browser-version">' + 'You are using ' + navigator.sayswho + '!</p>');
 
-for (let anchor of anchors) {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault()
+
+// // ! Task 7
+// const anchors = document.querySelectorAll('a.menu-list__link')
+
+// for (let anchor of anchors) {
+//   anchor.addEventListener('click', function (e) {
+//     e.preventDefault()
     
-    const blockID = anchor.getAttribute('href')
+//     const blockID = anchor.getAttribute('href')
     
-    document.querySelector(blockID).scrollIntoView({
-      behavior: 'smooth',
-      block: 'start'
-    })
-  })
-}
+//     document.querySelector(blockID).scrollIntoView({
+//       behavior: 'smooth',
+//       block: 'start'
+//     })
+//   })
+// }
 
 
 // ! Additional task 1
