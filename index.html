@@ -8,254 +8,243 @@
 	<link rel="stylesheet" href="css/style.min.css">
 </head>
 <body	class="page page__dark">
-	<main class="main">
-		<div class="container">
-			<h2 class="title" id="hw1">First JS homework</h2>
-			<div class="first-homework">
-				<div class="task">
-					<h3 class="task__title">Task 1 <span ></span></h3>
-					<p class="task__title-descr">Difference between values in array<br>
-						<span class="task__text">
-							A function that returns the difference between the largest and smallest value in the list given as the function's argument. The array that the function receives as an argument can contain positive and negative numbers. If the array is empty or has a single value, return zero. Initially, the array will be given in unsorted form.
-						</span>
-					</p>
-					<p class="task__input span field"></p>
-					<div class="task__inner">
-						<span class="field">=></span>
-						<span class="task__output field"></span>
-						<button class="first-task__btn button">Reset</button>
-					</div>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 2</h3>
-					<p class="task__title-descr">Sorting words by length<br>
-						<span class="task__text">
-							A function that take a string and a number. Return, as an array, only those words that are longer than a number.
-						</span>
-					</p>
-					<textarea class="second-task__input-text textarea" placeholder="Type any text here"></textarea>
-					<div class="inner">
-						<input class="second-task__input-num field" type="number" placeholder="0">
-						<button class="second-task__apply button">Apply</button>
-					</div>
-					<p class="second-task__output span"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 3</h3>
-					<p class="task__title-descr">Finding the missing digit<br>
-						<span class="task__text">
-							In an unsorted array consisting of numbers from 0 to 9, one digit is missing. We don't know which one and we need to find it.
-						</span>
-					</p>
-					<p class="third-task__example field"></p>
-					<span class="field">=></span>
-					<span class="third-task__output field">0</span>
-					<button class="third-task__refresh button">Refresh</button>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 4</h3>
-					<p class="task__title-descr">Comparing strings<br>
-						<span class="task__text">
-							A function that returns true if the first argument passed (a string) ends with the second argument (also a string).
-						</span>
-					</p>
-					<input class="fourth-task__first-input field" type="text" placeholder="Main string here">
-					<input class="fourth-task__second-input field" type="text" placeholder="Check for ending ">
-					<div class="fourth-task__inner">
-						<button class="fourth-task__check button">Check</button>
-						<p class="fourth-task__output"></p>
-					</div>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 5</h3>
-					<p class="task__title-descr">Average between closest<br>
-						<span class="task__text">
-							A function that takes an array of integers and returns an array of the averages of each integer and its successor, if any.
-						</span>
-					</p>
-					<p class="fifth-task__example field"></p>
-					<p class="fifth-task__solution field"></p>
-					<button class="fifth-task__refresh button">Refresh</button>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 6</h3>
-					<p class="task__title-descr">Sort descending<br>
-						<span class="task__text">
-							A function that accepts any non-negative number and returns the maximum possible value from the digits of this number.
-						</span>
-					</p>
-					<input class="six-task__input field" type="text" placeholder="0">
-					<p class="six-task__output field"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 7</h3>
-					<p class="task__title-descr">Name score<br>
-						<span class="task__text">
-							A function that takes a name string and checks how good the given name is. A preloaded dictionary of alphabet scores is available on the Code tab. Add up the letters of your name to get your total score.
-						</span>
-					</p>
-					<input class="seventh-task__input field" type="text" placeholder="Type your name here">
-					<p class="seventh-task__output field"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 8</h3>
-					<p class="task__title-descr">Vowels and consonants<br>
-						<span class="task__text">
-							A function that takes a string and returns the number of vowels and consonants it contains.
-						</span>
-					</p>
-					<textarea class="eight-task__input field" type="text" placeholder="Type your text"></textarea>
-					<p class="eight-task__vowels eight-task__output field"></p>
-					<p class="eight-task__consonants eight-task__output field"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 9</h3>
-					<p class="task__title-descr">Remove letters from a string<br>
-						<span class="task__text">
-							A function that will remove letters from a given one and return a modified version. If the given string does not contain the specified characters, return null.
-						</span>
-					</p>
-					<textarea class="nineth-task__input-text textarea" type="text" placeholder="Text to remove letters from"></textarea>
-					<input class="nineth-task__input-letters field" type="text" placeholder="Letters to removing">
-					<button class="nineth-task__apply button">Apply</button>
-					<p class="nineth-task__output field"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 10</h3>
-					<p class="task__title-descr">Unique elements from two arrays<br>
-						<span class="task__text">
-							A JavaScript function to find unique elements from two arrays.
-						</span>
-					</p>
-					<p class="tenth-task__input-one field"></p>
-					<p class="tenth-task__input-two field"></p>
-					<button class="tenth-task__reset button">Reset</button>
-					<p class="tenth-task__output field"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 11</h3>
-					<p class="task__title-descr">Inverted copy of the object<br>
-						<span class="task__text">
-							A function to get a copy of an object where keys become values and values become keys.
-						</span>
-					</p>
-					<textarea class="eleventh-task__input-text textarea" type="text" placeholder="{red: `#FF0000`,green: `#00FF00`,white: `#FFFFFF`}"></textarea>
-					<div class="eleventh-task__output preformated"></div>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 12</h3>
-					<p class="task__title-descr">()<br>
-						<span class="task__text">
-							Ивана Иванова обокрали. Но его вещи были застрахованы на определенную сумму. Учитывая украденные вещи и ограничение страховки, верните разницу между общей стоимостью этих вещей и пределом политики.
-						</span>
-					</p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 13</h3>
-					<p class="task__title-descr">String rotation<br>
-						<span class="task__text">
-							A left and right rotation function that returns all left and right rotations of a string.
-						</span>
-					</p>
-					<input class="thirteenth-task__input field" type="text">
-					<button class="thirteenth-task__left button">To left</button>
-					<button class="thirteenth-task__right button">To right</button>
-					<p class="thirteenth-task__output field"></p>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 14</h3>
-					<p class="task__title-descr">Will the brick fit in the hole?<br>
-						<span class="task__text">
-							A function that takes three dimensions of a brick: height (a), width (b) and depth (c) and returns true if this brick can fit in a hole with width (w) and height (h).
-						</span>
-					</p>
-					<fieldset class="brick-form">
-						<legend>Brick</legend>
-						<label>x - <input class="fourteenth-task__x input-num" type="number"></label>
-						<label>y - <input class="fourteenth-task__y input-num" type="number"></label>
-						<label>z - <input class="fourteenth-task__z input-num" type="number"></label>
-					</fieldset>
-					<fieldset class="brick-form">
-						<legend>Hole</legend>
-						<label>w - <input class="fourteenth-task__w input-num" type="number"></label>
-						<label>h - <input class="fourteenth-task__h input-num" type="number"></label>
-					</fieldset>
-					<div class="fourteenth-task__inner">
-						<button class="fourteenth-task__apply button">Apply</button>
-						<p class="fourteenth-task__output field"></p>
-					</div>
-				</div>
+	<header class="header">
+		<div class="header__inner">
+			<div class="progress">
+				<div class="progress__value">0%</div>
 			</div>
-			<h2 class="title" id="hw2">Second JS homework</h2>
-			<div class="second-homework">
-				<div class="task">
-					<h3 class="task__title">Task 1</h3>
-					<p class="task__title-descr">(Sending data to another page)</p>
-					<input class="redirect__input field" type="text" placeholder="Type your name">
-					<button class="redirect__btn button">Confirm</button>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 2</h3>
-					<p class="task__title-descr">(Div moving)</p>
-					<div class="div__wrapper">
-						<div class="div__container">
-							<div class="div__item"><span class="day-of-week"></span></div>
-						</div>
-					</div>
-					<button class="div__button button">Toggle pause</button>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 3</h3>
-					<p class="task__title-descr">(Page loaded)</p>
-					<div class="is-loaded">Page loaded</div>
-					<button class="loaded__toggle button">Toggle visibility</button>
-				</div>
-				<div class="task">
-					<h3 class="task__title">Task 4</h3>
-					<p class="task__title-descr">(Phrase to list)</p>
-					<input class="task-two__input field" type="text">
-					<button class="task-two__apply button">Apply</button>
-					<div class="task-two__inner">
-						<ul class="task-two__output field">
-						</ul>
-					</div>
-				</div>
-			</div>
-			<h2 class="title" id="hw3">Third JS homework</h2>
+			<svg class="theme-btn" width="35" height="35" viewBox="0 0 35 35" fill="none">
+				<path class="theme-btn__path" d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35ZM17.5 32.375V2.625C25.7152 2.625 32.375 9.28476 32.375 17.5C32.375 25.7152 25.7152 32.375 17.5 32.375Z" fill="#f9f9ebf0"/>
+			</svg>
+			<button class="burger__btn">
+				<span class="burger__bg"></span>
+				<span class="burger__line burger__line-1"></span>
+				<span class="burger__line burger__line-2"></span>
+				<span class="burger__line burger__line-3"></span>
+			</button>
 		</div>
-		<aside class="aside">
-			<ul class="menu">
-				<li class="menu__item">
-					<button class="menu__btn">
-						<span class="menu__bg"></span>
-						<span class="menu__line menu__line-1"></span>
-						<span class="menu__line menu__line-2"></span>
-						<span class="menu__line menu__line-3"></span>
-					</button>
-				</li>
-				<li class="menu__item">
-					<button class="theme-btn">
-						<span class="theme-btn__switcher">
-						</span>
-					</button>
-				</li>
-				<li class="menu__item">
-					<a href="#hw1" class="menu__link">HW 1</a>
-				</li>
-				<li class="menu__item">
-					<a href="#hw2" class="menu__link">HW 2</a>
-				</li>
-				<li class="menu__item">
-					<a href="#hw3" class="menu__link">HW 3</a>
-				</li>
-			</ul>
-		</aside>
+
+	</header>
+	<main class="main">
+		<h2 class="title" id="hw1">First JS homework</h2>
+		<div class="task">
+			<h3 class="task__title">Task 1 <span ></span></h3>
+			<p class="task__title-descr">Difference between values in array<br>
+				<span class="task__text">
+					A function that returns the difference between the largest and smallest value in the list given as the function's argument. The array that the function receives as an argument can contain positive and negative numbers. If the array is empty or has a single value, return zero. Initially, the array will be given in unsorted form.
+				</span>
+			</p>
+			<p class="task__input span field"></p>
+			<div class="task__inner">
+				<span class="field">=></span>
+				<span class="task__output field"></span>
+				<button class="first-task__btn button">Reset</button>
+			</div>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 2</h3>
+			<p class="task__title-descr">Sorting words by length<br>
+				<span class="task__text">
+					A function that take a string and a number. Return, as an array, only those words that are longer than a number.
+				</span>
+			</p>
+			<textarea class="second-task__input-text textarea" placeholder="Type any text here"></textarea>
+			<div class="inner">
+				<input class="second-task__input-num field" type="number" placeholder="0">
+				<button class="second-task__apply button">Apply</button>
+			</div>
+			<p class="second-task__output span"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 3</h3>
+			<p class="task__title-descr">Finding the missing digit<br>
+				<span class="task__text">
+					In an unsorted array consisting of numbers from 0 to 9, one digit is missing. We don't know which one and we need to find it.
+				</span>
+			</p>
+			<p class="third-task__example field"></p>
+			<span class="field">=></span>
+			<span class="third-task__output field">0</span>
+			<button class="third-task__refresh button">Refresh</button>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 4</h3>
+			<p class="task__title-descr">Comparing strings<br>
+				<span class="task__text">
+					A function that returns true if the first argument passed (a string) ends with the second argument (also a string).
+				</span>
+			</p>
+			<input class="fourth-task__first-input field" type="text" placeholder="Main string here">
+			<input class="fourth-task__second-input field" type="text" placeholder="Check for ending ">
+			<div class="fourth-task__inner">
+				<button class="fourth-task__check button">Check</button>
+				<p class="fourth-task__output"></p>
+			</div>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 5</h3>
+			<p class="task__title-descr">Average between closest<br>
+				<span class="task__text">
+					A function that takes an array of integers and returns an array of the averages of each integer and its successor, if any.
+				</span>
+			</p>
+			<p class="fifth-task__example field"></p>
+			<p class="fifth-task__solution field"></p>
+			<button class="fifth-task__refresh button">Refresh</button>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 6</h3>
+			<p class="task__title-descr">Sort descending<br>
+				<span class="task__text">
+					A function that accepts any non-negative number and returns the maximum possible value from the digits of this number.
+				</span>
+			</p>
+			<input class="six-task__input field" type="text" placeholder="0">
+			<p class="six-task__output field"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 7</h3>
+			<p class="task__title-descr">Name score<br>
+				<span class="task__text">
+					A function that takes a name string and checks how good the given name is. A preloaded dictionary of alphabet scores is available on the Code tab. Add up the letters of your name to get your total score.
+				</span>
+			</p>
+			<input class="seventh-task__input field" type="text" placeholder="Type your name here">
+			<p class="seventh-task__output field"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 8</h3>
+			<p class="task__title-descr">Vowels and consonants<br>
+				<span class="task__text">
+					A function that takes a string and returns the number of vowels and consonants it contains.
+				</span>
+			</p>
+			<textarea class="eight-task__input field" type="text" placeholder="Type your text"></textarea>
+			<p class="eight-task__vowels eight-task__output field"></p>
+			<p class="eight-task__consonants eight-task__output field"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 9</h3>
+			<p class="task__title-descr">Remove letters from a string<br>
+				<span class="task__text">
+					A function that will remove letters from a given one and return a modified version. If the given string does not contain the specified characters, return null.
+				</span>
+			</p>
+			<textarea class="nineth-task__input-text textarea" type="text" placeholder="Text to remove letters from"></textarea>
+			<input class="nineth-task__input-letters field" type="text" placeholder="Letters to removing">
+			<button class="nineth-task__apply button">Apply</button>
+			<p class="nineth-task__output field"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 10</h3>
+			<p class="task__title-descr">Unique elements from two arrays<br>
+				<span class="task__text">
+					A JavaScript function to find unique elements from two arrays.
+				</span>
+			</p>
+			<p class="tenth-task__input-one field"></p>
+			<p class="tenth-task__input-two field"></p>
+			<button class="tenth-task__reset button">Reset</button>
+			<p class="tenth-task__output field"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 11</h3>
+			<p class="task__title-descr">Inverted copy of the object<br>
+				<span class="task__text">
+					A function to get a copy of an object where keys become values and values become keys.
+				</span>
+			</p>
+			<textarea class="eleventh-task__input-text textarea" type="text" placeholder="{red: `#FF0000`,green: `#00FF00`,white: `#FFFFFF`}"></textarea>
+			<div class="eleventh-task__output preformated"></div>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 12</h3>
+			<p class="task__title-descr">()<br>
+				<span class="task__text">
+					Ивана Иванова обокрали. Но его вещи были застрахованы на определенную сумму. Учитывая украденные вещи и ограничение страховки, верните разницу между общей стоимостью этих вещей и пределом политики.
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 13</h3>
+			<p class="task__title-descr">String rotation<br>
+				<span class="task__text">
+					A left and right rotation function that returns all left and right rotations of a string.
+				</span>
+			</p>
+			<input class="thirteenth-task__input field" type="text">
+			<button class="thirteenth-task__left button">To left</button>
+			<button class="thirteenth-task__right button">To right</button>
+			<p class="thirteenth-task__output field"></p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 14</h3>
+			<p class="task__title-descr">Will the brick fit in the hole?<br>
+				<span class="task__text">
+					A function that takes three dimensions of a brick: height (a), width (b) and depth (c) and returns true if this brick can fit in a hole with width (w) and height (h).
+				</span>
+			</p>
+			<fieldset class="brick-form">
+				<legend>Brick</legend>
+				<label>x - <input class="fourteenth-task__x input-num" type="number"></label>
+				<label>y - <input class="fourteenth-task__y input-num" type="number"></label>
+				<label>z - <input class="fourteenth-task__z input-num" type="number"></label>
+			</fieldset>
+			<fieldset class="brick-form">
+				<legend>Hole</legend>
+				<label>w - <input class="fourteenth-task__w input-num" type="number"></label>
+				<label>h - <input class="fourteenth-task__h input-num" type="number"></label>
+			</fieldset>
+			<div class="fourteenth-task__inner">
+				<button class="fourteenth-task__apply button">Apply</button>
+				<p class="fourteenth-task__output field"></p>
+			</div>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 1</h3>
+			<p class="task__title-descr">(Sending data to another page)</p>
+			<input class="redirect__input field" type="text" placeholder="Type your name">
+			<button class="redirect__btn button">Confirm</button>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 2</h3>
+			<p class="task__title-descr">(Div moving)</p>
+			<div class="div__wrapper">
+				<div class="div__container">
+					<div class="div__item"><span class="day-of-week"></span></div>
+				</div>
+			</div>
+			<button class="div__button button">Toggle pause</button>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 3</h3>
+			<p class="task__title-descr">(Page loaded)</p>
+			<div class="is-loaded">Page loaded</div>
+			<button class="loaded__toggle button">Toggle visibility</button>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 4</h3>
+			<p class="task__title-descr">(Phrase to list)</p>
+			<input class="task-two__input field" type="text">
+			<button class="task-two__apply button">Apply</button>
+			<div class="task-two__inner">
+				<ul class="task-two__output field">
+				</ul>
+			</div>
+		</div>
 	</main>
 	<footer class="footer"></footer>
-	<div class="progress">
-		<div class="progress__value">0%</div>
-	</div>
-
+	<ul class="menu">
+		<li class="menu__item">
+			<a href="#hw1" class="menu__link">HomeWork 1</a>
+		</li>
+		<li class="menu__item">
+			<a href="#hw2" class="menu__link">HomeWork 2</a>
+		</li>
+		<li class="menu__item">
+			<a href="#hw3" class="menu__link">HomeWork 3</a>
+		</li>
+	</ul>
 	<script src="js/main.js"></script>
 </body>
 </html>
