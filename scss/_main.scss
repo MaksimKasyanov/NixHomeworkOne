@@ -360,30 +360,7 @@ body{
 	width: 100%;
 	min-height: 45px;
 }
-.textarea{
-	display: block;
-	color: inherit;
-	background-color: rgba(255, 255, 255, 0.1);
-	padding: 10px;
-	border-radius: 4px;
-	margin-bottom: 10px;
-	width: 100%;
-	height: 150px;
-	overflow-x: hidden;
-	resize: none;
-	&::-webkit-scrollbar {
-		width: 4px;
-	}
-	&::-webkit-scrollbar-track {
-		border-radius:4px;
-		background-color: rgb(180, 180, 180);
-		height: 100%;
-	}
-	&::-webkit-scrollbar-thumb {
-		border-radius: 4px;
-		background-color: rgb(66, 66, 66);
-	}
-}
+
 .inner{
 	display: flex;
 	justify-content: space-between;
@@ -445,6 +422,30 @@ body{
 	&__decrease{
 		&::before{
 			display: none;
+		}
+	}
+	&__input-text{
+		display: block;
+		color: inherit;
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 10px;
+		border-radius: 4px;
+		margin-bottom: 10px;
+		width: 100%;
+		height: 155px;
+		overflow-x: hidden;
+		resize: none;
+		&::-webkit-scrollbar {
+			width: 4px;
+		}
+		&::-webkit-scrollbar-track {
+			border-radius:4px;
+			background-color: rgb(180, 180, 180);
+			height: 100%;
+		}
+		&::-webkit-scrollbar-thumb {
+			border-radius: 4px;
+			background-color: rgb(66, 66, 66);
 		}
 	}
 	&__input-num{
