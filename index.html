@@ -13,9 +13,12 @@
 			<div class="progress">
 				<div class="progress__value">0%</div>
 			</div>
-			<svg class="theme-btn" width="35" height="35" viewBox="0 0 35 35" fill="none">
-				<path class="theme-btn__path" d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35ZM17.5 32.375V2.625C25.7152 2.625 32.375 9.28476 32.375 17.5C32.375 25.7152 25.7152 32.375 17.5 32.375Z" fill="#f9f9ebf0"/>
-			</svg>
+			<button class="theme-button">
+				<svg class="theme-btn" width="35" height="35" viewBox="0 0 35 35" fill="none">
+					<path class="theme-btn__path" d="M17.5 35C27.165 35 35 27.165 35 17.5C35 7.83502 27.165 0 17.5 0C7.83502 0 0 7.83502 0 17.5C0 27.165 7.83502 35 17.5 35ZM17.5 32.375V2.625C25.7152 2.625 32.375 9.28476 32.375 17.5C32.375 25.7152 25.7152 32.375 17.5 32.375Z" fill="#f9f9ebf0"/>
+				</svg>
+			</button>
+			
 			<button class="burger__btn">
 				<span class="burger__bg"></span>
 				<span class="burger__line burger__line-1"></span>
@@ -26,19 +29,19 @@
 
 	</header>
 	<main class="main">
-		<h2 class="title" id="hw1">First JS homework</h2>
+		<h2 class="title" id="hw1">JavaScript Basics</h2>
 		<div class="task">
 			<h3 class="task__title">Task 1 <span ></span></h3>
-			<p class="task__title-descr">Difference between values in array<br>
+			<p class="task__title-descr">Difference between max & min values in array<br>
 				<span class="task__text">
-					A function that returns the difference between the largest and smallest value in the list given as the function's argument. The array that the function receives as an argument can contain positive and negative numbers. If the array is empty or has a single value, return zero. Initially, the array will be given in unsorted form.
+					A function that returns the difference between the largest and smallest values in an array that the function receives as an argument. Can contain positive and negative numbers.
 				</span>
 			</p>
-			<p class="task__input span field"></p>
+			<p class="task__input difference-input span field"></p>
 			<div class="task__inner">
 				<span class="field">=></span>
-				<span class="task__output field"></span>
-				<button class="first-task__btn button">Reset</button>
+				<span class="task__output difference-output field"></span>
+				<button class="first-task__btn difference-button button">Reset</button>
 			</div>
 		</div>
 		<div class="task">
@@ -49,11 +52,15 @@
 				</span>
 			</p>
 			<textarea class="second-task__input-text textarea" placeholder="Type any text here"></textarea>
-			<div class="inner">
-				<input class="second-task__input-num field" type="number" placeholder="0">
-				<button class="second-task__apply button">Apply</button>
+			<div class="second-task__controls">
+				<div class="second-task__value">
+					<button class="second-task__decrease"></button>
+					<input class="second-task__input-num" type="number">
+					<button class="second-task__increase">+</button>
+				</div>
+				<button class="second-task__random-string">Random Text</button>
 			</div>
-			<p class="second-task__output span"></p>
+			<p class="second-task__output field">Result</p>
 		</div>
 		<div class="task">
 			<h3 class="task__title">Task 3</h3>
@@ -200,15 +207,74 @@
 				<p class="fourteenth-task__output field"></p>
 			</div>
 		</div>
+		<h2 class="title" id="hw1">JavaScript Events</h2>
+
 		<div class="task">
 			<h3 class="task__title">Task 1</h3>
-			<p class="task__title-descr">(Sending data to another page)</p>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		
+		<div class="task">
+			<h3 class="task__title">Task 2</h3>
+			<p class="task__title-descr">(Sending data to another page)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
 			<input class="redirect__input field" type="text" placeholder="Type your name">
 			<button class="redirect__btn button">Confirm</button>
 		</div>
 		<div class="task">
-			<h3 class="task__title">Task 2</h3>
-			<p class="task__title-descr">(Div moving)</p>
+			<h3 class="task__title">Task 3</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 4</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 5</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 6</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 7</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 8</h3>
+			<p class="task__title-descr">(Div moving)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
 			<div class="div__wrapper">
 				<div class="div__container">
 					<div class="div__item"><span class="day-of-week"></span></div>
@@ -217,14 +283,38 @@
 			<button class="div__button button">Toggle pause</button>
 		</div>
 		<div class="task">
-			<h3 class="task__title">Task 3</h3>
-			<p class="task__title-descr">(Page loaded)</p>
+			<h3 class="task__title">Task 9</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 10</h3>
+			<p class="task__title-descr">(Scroll percentage)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
+		</div>
+		<div class="task">
+			<h3 class="task__title">Task 11</h3>
+			<p class="task__title-descr">(Page loaded)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
 			<div class="is-loaded">Page loaded</div>
 			<button class="loaded__toggle button">Toggle visibility</button>
 		</div>
 		<div class="task">
-			<h3 class="task__title">Task 4</h3>
-			<p class="task__title-descr">(Phrase to list)</p>
+			<h3 class="task__title">Task 12</h3>
+			<p class="task__title-descr">(Phrase to list)<br>
+				<span class="task__text">
+					Short explain
+				</span>
+			</p>
 			<input class="task-two__input field" type="text">
 			<button class="task-two__apply button">Apply</button>
 			<div class="task-two__inner">
@@ -232,6 +322,8 @@
 				</ul>
 			</div>
 		</div>
+		<h2 class="title" id="hw1">JS Class, Asynk</h2>
+
 	</main>
 	<footer class="footer"></footer>
 	<ul class="menu">

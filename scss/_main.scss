@@ -319,12 +319,12 @@ body{
 		margin-bottom: 20px;
 		font-size: 15px;
 		overflow: hidden;
-		max-height: 16px;
+		max-height: 18px;
 		transition: all 1s;
 		font-weight: 600;
 		cursor: pointer;
 		&_active{
-			max-height: 180px;
+			max-height: 120px;
 
 		}
 	}
@@ -358,16 +358,17 @@ body{
 	border-radius: 4px;
 	margin-bottom: 10px;
 	width: 100%;
-	height: 45px;
+	min-height: 45px;
 }
 .textarea{
+	display: block;
 	color: inherit;
 	background-color: rgba(255, 255, 255, 0.1);
 	padding: 10px;
 	border-radius: 4px;
 	margin-bottom: 10px;
 	width: 100%;
-	height: 200px;
+	height: 150px;
 	overflow-x: hidden;
 	resize: none;
 	&::-webkit-scrollbar {
@@ -402,13 +403,70 @@ body{
 	margin-bottom: 10px;
 }
 .second-task{
+	&__controls{
+		display: flex;
+	}
+	&__value{
+		color: inherit;
+		background-color: rgba(255, 255, 255, 0.1);
+		height: 35px;
+		border-radius: 4px;
+		margin-bottom: 10px;
+		width: 68px;
+		display: flex;
+		justify-content: space-between;
+		overflow: hidden;
+	}
+	&__decrease,
+	&__increase{
+		position: relative;
+		background-color: rgba(255, 255, 255, 0.1);
+		width: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&::after,
+		&::before{
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 8px;
+			height: 1px;
+			background-color: #fff;
+			border-radius: 1px;
+		}
+		&::before{
+			width: 1px;
+			height: 8px;
+		}
+	}
+	&__decrease{
+		&::before{
+			display: none;
+		}
+	}
 	&__input-num{
 		color: #fff;
+		width: 30px;
+		text-align: center;
+		height: 100%;
+	}
+	&__random-string{
+		display: block;
+		margin-left: 15px;
+		color: #fff;
+		height: 35px;
+		background-color: rgba(255, 255, 255, 0.1);
+		padding: 0 10px;
+		border-radius: 4px;
 	}
 	&__output{
 		min-height: 45px;
 		height: auto;
 		width: 100%;
+		
 	}
 }
 .eight-task{

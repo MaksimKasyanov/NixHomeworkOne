@@ -17,6 +17,7 @@ function themeSwitcer() {
 	theme.classList.toggle("page__light");
 }
 
+// !Tasks description
 let tasks = document.querySelectorAll('.main .task .task__title-descr');
 for (let i = 0; i < tasks.length; i++) {
 	tasks[i].addEventListener("click", function() {
@@ -26,63 +27,80 @@ for (let i = 0; i < tasks.length; i++) {
 
 // !Random array
 const randomArr = (min, max, arrLength) => {
-	let randomInt = null;
 	let randomArray = [];
 	let randomLength = Math.floor(Math.random() * arrLength) + 1;
 	for(let i = 0; i < randomLength; i++){
-		randomInt = parseInt(min - 0.5 + Math.random() * (max - min + 1));
+		let randomInt = parseInt(min - 0.5 + Math.random() * (max - min + 1));
 		randomArray.push(randomInt);
 	}
 	return randomArray
 }
 
-
 // ? FIRST JS HOMEWORK
 // ! Task 1
-
-
 function diffOfNums(){
-	let arr = randomArr(-50,50,6);
-	
-	console.log(arr)
+	const arr = randomArr(-20,20,10);
+	const input = document.querySelector('.difference-input');
+	const output = document.querySelector('.difference-output');
+	input.innerHTML = `[${arr.join(', ')}]`;
+	output.innerHTML = Math.max.apply(null, arr) - Math.min.apply(null, arr);
+}diffOfNums()
+const getNewDifference = document.querySelector('.difference-button').addEventListener('click', getDifference);
+function getDifference(){
+	diffOfNums()
 }
-diffOfNums()
-// // ! Task 2
-// document.querySelector(".second-task__input-text");
-// document.querySelector(".second-task__input-num");
-// document.querySelector(".second-task__apply").addEventListener("click", cleaningStr)
-// function cleaningStr(){
-// 	let secondTaskOutput = document.querySelector(".second-task__output");
-// 	let num;
-// 	let text;
-// 	let stringToArray = [];
-// 	let arrOfSortedWords = [];
-// 	let wordsLength;
-// 	stringToArray = [];
-// 	arrOfSortedWords = [];
-// 	text = document.querySelector(".second-task__input-text").value;
-// 	num = Number(document.querySelector(".second-task__input-num").value);
-// 	text = text.toLowerCase();
-// 	text = text.replace(/\r?\n/g, "");
-// 	text = text.replace(/[^^a-zA-ZА-Яа-я\s]/gi, ' ');
-// 	text = text.replace(/ +/g, ' ').trim();
-// 	stringToArray = text.split(' ')
-// 	console.log(stringToArray);
-// 	for(let i = 0; i = stringToArray.length; i++){
-// 		if(stringToArray[0].length === num){
-// 			arrOfSortedWords.push(stringToArray[0])
-// 			stringToArray.shift();
-// 		}else{
-// 			stringToArray.shift();
-// 		}
-// 	}
-// 	arrOfSortedWords.shift();
-// 	wordsLength = Number(arrOfSortedWords.length);
-// 	console.log(arrOfSortedWords);
-// 	console.log(wordsLength);
-// 	secondTaskOutput.innerHTML = 'Found ' + wordsLength + ' words ' + ' \u2013 ' + arrOfSortedWords.join(", ");
-// }
 
+// ! Task 2
+
+document.querySelector(".second-task__input-text").addEventListener('input', sortingWordsByLength);
+document.querySelector(".second-task__input-num").addEventListener('input', sortingWordsByLength);
+document.querySelector(".second-task__input-num").value = 1;
+const textsArr = ['Without a doubt one of the most important poems of the 20th century. “It has never lost its glamour,” Paul Muldoon observed. “It has never failed to be equal to both the fracture of its own era and what, alas, turned out to be the even greater fracture of the ongoing 20th century and now, it seems, the 21st century.” See also: “The Love Song of J. Alfred Prufrock.”','Bishop’s much loved and much discussed ode to loss, which Claudia Roth Pierpont called “a triumph of control, understatement, wit. Even of self-mockery, in the poetically pushed rhyme word “vaster,” and the ladylike, pinkies-up “shan’t.” An exceedingly rare mention of her mother—as a woman who once owned a watch. A continent standing in for losses larger than itself.”', 'The most famous poem, and a terribly beautiful one, by our country’s first African-American Poet Laureate (though the position was then called Consultant in Poetry to the Library of Congress). See also: “Those Winter Sundays, which despite what I wrote above may be equally as famous.”', 'Dunbar’s most famous poem, and arguably his best, which biographer Paul Revell described as “a moving cry from the heart of suffering. The poem anticipates, and presents in terms of passionate personal regret, the psychological analysis of the fact of blackness in Frantz Fanon’s Peau Noire, Masques Blancs, with a penetrating insight into the reality of the black man’s plight in America.”'];
+function sortingWordsByLength(){
+	let string = document.querySelector(".second-task__input-text").value;
+	let number = document.querySelector(".second-task__input-num").value;
+	let newString = string.replace(/[^a-zа-яё\s]/gi, '').replace(/\s+/g, ' ').trim();
+	const arr = newString.toLowerCase().split(' ');
+	const resultArr = [];
+	arr.map((el) => el.length == number ? resultArr.push(el) : el);
+	
+	document.querySelector(".second-task__output").innerHTML = `There is a ${resultArr.length} words: \n
+	${resultArr.sort().join(', ')}`;
+}
+document.querySelector(".second-task__decrease").addEventListener('click', secondTaskDecriase);
+function secondTaskDecriase(){
+	let number = document.querySelector(".second-task__input-num").value;
+	if(number > 1){
+		document.querySelector(".second-task__input-num").value -= 1;
+	}
+	sortingWordsByLength()
+}
+document.querySelector(".second-task__increase").addEventListener('click', secondTaskIncriase);
+function secondTaskIncriase(){
+	let number = document.querySelector(".second-task__input-num").value;
+	document.querySelector(".second-task__input-num").value = Number(number) + 1;
+	sortingWordsByLength()
+}
+document.querySelector(".second-task__random-string").addEventListener('click', secondTaskRandomText);
+let secondTaskCounter = 1;
+function secondTaskRandomText(){
+	switch(secondTaskCounter){
+		case 1:
+			document.querySelector(".second-task__input-text").value = textsArr[secondTaskCounter];
+			secondTaskCounter += 1;
+			break;
+		case 2:
+			document.querySelector(".second-task__input-text").value = textsArr[secondTaskCounter];
+			secondTaskCounter += 1;
+			break;
+		case 3:
+			document.querySelector(".second-task__input-text").value = textsArr[secondTaskCounter];
+			secondTaskCounter = 1;
+			break;
+	}
+	sortingWordsByLength()
+
+}
 // // ! Task 3
 // const thirdExample = document.querySelector(".third-task__example");
 // const thirdOutput = document.querySelector(".third-task__output");
@@ -137,12 +155,12 @@ diffOfNums()
 // document.querySelector(".fifth-task__refresh").addEventListener("click", averageBtwnClosest)
 // function averageBtwnClosest(){
 // 	const fifthTaskArr = [];
-// 	randomArr();
-// 	let n = randomArray.length - 1;
-// 	fifthExample.innerHTML = '[' + randomArray + ']';
+// 	const arr = randomArr(-20,20,10);
+// 	let n = arr.length - 1;
+// 	fifthExample.innerHTML = '[' + arr + ']';
 // 	for(let i = 0; i < n; i++){
-// 		fifthTaskArr.push((randomArray[0] + randomArray[1]) / 2)
-// 		randomArray.shift();
+// 		fifthTaskArr.push((arr[0] + arr[1]) / 2)
+// 		arr.shift();
 // 	}
 // 	fifthSolution.innerHTML = '[' + fifthTaskArr + ']';
 // }
@@ -232,52 +250,52 @@ diffOfNums()
 // 	console.log(matching);
 // }
 
-// //  ! Task 10
-// let tenthFirstArr = document.querySelector(".tenth-task__input-one");
-// let tenthSecondArr = document.querySelector(".tenth-task__input-two");
-// let tenthOutput = document.querySelector(".tenth-task__output");
-// document.querySelector(".tenth-task__reset").addEventListener("click", unique)
-// function randomSmallArr(){
-// 	let randomInt;
-// 	let randomLength;
-// 	const maxRandomLength = 6;
-// 	const minRandomInt = 1;
-// 	const maxRandomInt = 10;
-// 	randomLength = Math.floor(4 + Math.random() * maxRandomLength);
-// 	for(let i = 0; i < randomLength; i++){
-// 		randomInt = parseInt(minRandomInt - 0.5 + Math.random() * (maxRandomInt - minRandomInt + 1));
-// 		randomArray.push(randomInt);
-// 	}
-// }
-// let firstArr;
-// let secondArr;
-// let output;
-// function tenthArrays(){
-// 	randomSmallArr();
-// 	firstArr = randomArray;
-// 	tenthFirstArr.innerHTML = firstArr;
-// 	randomArray = [];
-// 	randomSmallArr();
-// 	secondArr = randomArray;
-// 	tenthSecondArr.innerHTML = secondArr;
-// 	output = firstArr.concat(secondArr);
-// 	output.sort(function(a, b) {
-// 		return a - b;
-// 	});
+// // //  ! Task 10
+// // let tenthFirstArr = document.querySelector(".tenth-task__input-one");
+// // let tenthSecondArr = document.querySelector(".tenth-task__input-two");
+// // let tenthOutput = document.querySelector(".tenth-task__output");
+// // document.querySelector(".tenth-task__reset").addEventListener("click", unique)
+// // function randomSmallArr(){
+// // 	let randomInt;
+// // 	let randomLength;
+// // 	const maxRandomLength = 6;
+// // 	const minRandomInt = 1;
+// // 	const maxRandomInt = 10;
+// // 	randomLength = Math.floor(4 + Math.random() * maxRandomLength);
+// // 	for(let i = 0; i < randomLength; i++){
+// // 		randomInt = parseInt(minRandomInt - 0.5 + Math.random() * (maxRandomInt - minRandomInt + 1));
+// // 		// randomArray.push(randomInt);
+// // 	}
+// // }
+// // let firstArr;
+// // let secondArr;
+// // let output;
+// // function tenthArrays(){
+// // 	randomSmallArr();
+// // 	firstArr = randomArray;
+// // 	tenthFirstArr.innerHTML = firstArr;
+// // 	randomArray = [];
+// // 	randomSmallArr();
+// // 	secondArr = randomArray;
+// // 	tenthSecondArr.innerHTML = secondArr;
+// // 	output = firstArr.concat(secondArr);
+// // 	output.sort(function(a, b) {
+// // 		return a - b;
+// // 	});
 	
-// }
-// tenthArrays();
-// function unique() {
-// 	tenthArrays();
-// 	let result = [];
-// 	for (let str of output) {
-// 	if (!result.includes(str)) {
-// 		result.push(str);
-// 		}
-// 	}
-// 	tenthOutput.innerHTML = result;
-// }
-// unique();
+// // }
+// // tenthArrays();
+// // function unique() {
+// // 	tenthArrays();
+// // 	let result = [];
+// // 	for (let str of output) {
+// // 	if (!result.includes(str)) {
+// // 		result.push(str);
+// // 		}
+// // 	}
+// // 	tenthOutput.innerHTML = result;
+// // }
+// // unique();
 
 
 // // ! Task 11
